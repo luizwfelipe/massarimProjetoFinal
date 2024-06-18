@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Buenard:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend+Deca:wght@100..900&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -0.05vw;
+}
+
+input{
+    text-transform: none;
+}
+
+header{
+    background-color: #f2f2f2;
+    height: 20vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0.3vw 10px #cfcfcf;
+}
+header img{
+    width: 20vw;
+}
+header h2{
+    font-size: 2vw;
+    color: #202020;
+    font-family: 'Prompt', 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
+    font-weight: 800;
+}
+
+
+a{
+    text-decoration: none;
+}
+
+main{
+    margin-top: 4vh;
+}
+
+#revisao-sacola{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    padding: 1vw;
+}
+
+#container-revisao{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    height: 60vh;
+    overflow-y: scroll;
+    margin-inline: 1vw;
+    align-items: center;
+}
+
+.produto {
+    background-color: #f2f2f2;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    align-items: center;
+    width: 80%;
+    margin-inline: auto;
+    margin-bottom: 1vh;
+}
+
+.container-img{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-img img{
+    max-width: 150%;
+}
+.parteCima{
+    text-align: center;
+    justify-content: start;
+    display: flex;
+    color: #202020;
+}
+
+.parteBaixo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10%;
+}
+
+.parteCima h3{
+    color: #202020;
+    font-weight: 700;
+    font-size: 1.5vw;
+}
+
+.parteBaixo #preco{
+    margin-right: 30%;
+    color: #616161;
+    font-weight: 600;
+    font-size: 1.1vw;
+}
+
+.parteBaixo p{
+    color: #202020;
+    font-weight: 600;
+    font-size: 1.1vw;
+}
+
+.confirmar-revisao{
+    background-color: #f2f2f2;
+    height: 27vh;
+    width: 25vw;
+    padding: 0.5vw;
+    border-radius: 10px;
+    box-shadow: 0px 2px 2px #cfcfcf;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+}
+
+.confirmar-revisao .info-confirmar{
+    font-size: 1vw;
+    color: #616161;
+}
+
+.confirmar-revisao .info-confirmar #resumo-pedido{
+    display: flex;
+    justify-content: start;
+    font-size: 1.1vw;
+}
+
+.confirmar-revisao .info-confirmar #tt-revisao{
+    display: flex;
+    justify-content: space-between;
+}
+
+.confirmar-revisao .info-confirmar #frete-revisao{
+    display: flex;
+    justify-content: space-between;    
+}
+
+.confirmar-revisao .info-confirmar #total-pedido{
+    display: flex;
+    justify-content: space-between;
+}
+
+#confirmarCompra{
+    width: 100%;
+    background-color: #BF9B6F;
+    padding: 0.2vw;
+    color: #f2f2f2;
+    font-weight: 700;
+    font-size: 1.2vw;
+    border: none;
+    border-end-end-radius: 10px;
+    border-end-start-radius: 10px;
+    cursor: pointer;
+}
+.confirmar-revisao a{
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.2vh;
+    text-decoration: none;
+    color: #616161;
+}
+
+.confirmar-revisao a:hover{
+    color: #202020;
+    font-weight: 700;
+}
+
+.confirmar-revisao hr{
+    width: 100%;
+}
+
+#cep {
+    align-items: flex-start;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding-inline: 9vw;
+}
+#cep label{
+    font-size: 1vw;
+    font-weight: 700;
+    color: #202020;
+}
+
+#cep #input-cep input{
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #313131;
+    transition: 1s;
+}
+
+#cep #input-cep input:focus{
+    outline: none;
+    border-bottom: 1px solid #000000;
+}
+
+#cep #input-cep #calcularFrete{
+    background-color: #979797;
+    padding: 0.2vw;
+    color: #f2f2f2;
+    font-weight: 500;
+    font-size: 0.7vw;
+    border: none;
+    cursor: not-allowed;
+}
+
+.btn-decrementar{
+    font-size: 1.1vw;
+    font-weight: 700;
+    border-start-start-radius: 10px;
+    border-end-start-radius: 10px;
+    border: none;
+    color: #f2f2f2;
+    background-color: #BF9B6F;
+    width: 0.7vw;
+    cursor: pointer;
+    margin-inline: 0.2vw;
+}
+
+.btn-incrementar{
+    font-size: 1.1vw;
+    font-weight: 700;
+    border-start-end-radius: 10px;
+    border-end-end-radius: 10px;
+    border: none;
+    color: #f2f2f2;
+    background-color: #BF9B6F;
+    width: 0.7vw;
+    cursor: pointer;
+    margin-inline: 0.2vw;
+}
+
+.parteBaixo .quantidade{
+    width: 5%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #313131;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-inline: 0.2vw;
+}
+
+.parteBaixo .quantidade:focus {
+    outline: none;
+    border-bottom: 1px solid #BF9B6F;
+}
+
+.botaoTira{
+    margin-left: 0;
+    border: none;
+    background-color: #1a1a1a;
+    color: #f2f2f2;
+    width: 1vw; 
+    height: 1.7vh;
+    font-weight: 700;
+    font-size: 0.6vw;
+    cursor: pointer;
+    margin-left: 20%;
+}
+
+@media screen and (max-width:768px){
+    #revisao-sacola{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 1vw;
+    }
+
+    #container-revisao{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        height: 50vh;
+        overflow-y: scroll;
+        margin-inline: 1vw;
+        align-items: center;
+    }
+
+    #container-revisao .produto{
+        height: 30%;
+        width: 95%;
+    }
+    .container-img{
+        width: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .container-img img{
+        max-width: 100%;
+    }
+
+    #container-revisao .parteCima h3{
+        font-size: 90%;
+        font-weight: 700;
+    }
+
+    #container-revisao .parteBaixo #preco{
+        font-size: 70%;
+        font-weight: 700;
+    }
+
+
+    .btn-decrementar{
+        font-size: 100%;
+        font-weight: 700;
+        border-start-start-radius: 10px;
+        border-end-start-radius: 10px;
+        border: none;
+        color: #f2f2f2;
+        background-color: #BF9B6F;
+        width: 5%;
+        cursor: pointer;
+    }
+    
+    .btn-incrementar{
+        font-size: 100%;
+        font-weight: 700;
+        border-start-end-radius: 10px;
+        border-end-end-radius: 10px;
+        border: none;
+        color: #f2f2f2;
+        background-color: #BF9B6F;
+        width: 5%;
+        cursor: pointer;
+    }
+
+    .parteBaixo .quantidade{
+        min-width: 20%;
+        border: none;
+        background-color: transparent;
+        border-bottom: 1px solid #313131;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .parteBaixo .quantidade:focus {
+        outline: none;
+        border-bottom: 1px solid #BF9B6F;
+    }
+    .botaoTira{
+        margin-left: 0;
+        border: none;
+        background-color: #1a1a1a;
+        color: #f2f2f2;
+        width: 10%; 
+        height: 17%;
+        font-weight: 700;
+        font-size:100%;
+        cursor: pointer;
+        margin-inline: auto;
+    }
+    .confirmar-revisao{
+        margin-top: 10%;
+        width: 90%;
+    }
+
+
+    .confirmar-revisao .info-confirmar{
+        font-size: 70%;
+    }
+
+    
+
+    .confirmar-revisao #resumo-pedido{
+        font-size: 80%;
+        font-weight: 700;
+        color: #313131;
+    }
+    
+    #confirmarCompra {
+        width: 100%;
+        background-color: #BF9B6F;
+        padding: 0.2vw;
+        color: #f2f2f2;
+        font-weight: 700;
+        font-size: 100%;
+        border: none;
+        border-end-end-radius: 10px;
+        border-end-start-radius: 10px;
+        cursor: pointer;
+    }
+    #cep label {
+        margin-top: 10%;
+        font-size: 100%;
+        font-weight: 700;
+        color: #202020;
+    }
+    #cep #input-cep #calcularFrete {
+        background-color: #979797;
+        padding: 0.2vw;
+        color: #f2f2f2;
+        font-weight: 500;
+        font-size: 50%;
+        border: none;
+        cursor: not-allowed;
+    }
+}
