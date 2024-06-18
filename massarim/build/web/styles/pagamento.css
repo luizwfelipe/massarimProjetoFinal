@@ -1,0 +1,629 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Buenard:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend+Deca:wght@100..900&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -0.05vw;
+}
+
+input{
+    text-transform: none;
+}
+
+header{
+    height: 10vh;
+    margin-bottom: 5vh;
+    background-color: #f2f2f2;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
+}
+
+#container{
+    margin-inline: 1vw;
+    border-radius: 20px;
+    width: 70%;
+    height: 70vh;
+    background-color: #f2f2f2;
+    display: flex;
+    box-shadow: 0px 2px 2px #cfcfcf;
+}
+
+#container #tipo-pagamento{
+    width: 10%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tipo{
+    height: 100%;
+    width: 100%;
+    color: #616161;
+    font-size: 1.2vw;
+    margin: 20%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.tipo:hover{
+    font-size: 1.3vw;
+}
+
+.tipo:focus{
+    font-size: 1.5vw;
+    color: #202020;
+}
+
+
+#pix{
+    width: 80%;
+    display: none; /*flex*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#parteCima-pix{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+    width: 80%;
+    margin-bottom: 10%;
+}
+
+#pagar-qr{
+    width: 20%;
+}
+
+#pagar-qr img{
+    width: 70%;
+    border-start-start-radius: 10px;
+}
+
+#pagar-pix-code{
+    width: 100%;
+}
+
+#code-pix{
+    color: #202020;
+    background-color: #fff;
+    padding: 2%;
+    font-size: 0.8vw;
+    border-start-end-radius: 10px;
+    box-shadow: 0px 2px 2px #cfcfcf;
+}
+
+#btn-copiar-pix{
+    margin-top: 2%;
+    width: 100%;
+    background-color: #BF9B6F;
+    padding: 0.2vw;
+    color: #f2f2f2;
+    font-weight: 700;
+    font-size: 0.9vw;
+    border: none;
+    cursor: pointer;
+}
+
+#parteBaixo-pix{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30%;
+    width: 80%;
+    margin-bottom: 10%;
+}
+
+#intrucoes-pix{
+    background-color: #D9D9D9;
+    padding: 5%;
+    border-end-end-radius: 10px;
+    border-end-start-radius: 10px;
+}
+
+#instrucoes-pix h3{
+    font-size: 1.3vw;
+    font-weight: 700;
+}
+
+#pix.ativo{
+    display: flex;
+}
+
+/*PIX ACIMA*/
+/*CRÉDITO ABAIXO*/
+
+
+#credito{
+    width: 80%;
+    display: none; /*flex*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#area-pagamento-credito{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin: 0.5vw;
+}
+
+.input-credito{
+    width: 200%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    font-size: 0.7vw;
+}
+
+.input-credito input{ 
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #313131;
+    transition: 1s;
+}
+
+.input-credito input:focus{
+    outline: none;
+    border-bottom: 1px solid #c25e00;
+}
+
+#instrucoes-credito{
+    display: flex;
+    flex-direction: column;
+}
+
+#instrucoes-h3{
+    font-size: 0.7vw;
+    color: #616161;
+    font-weight: 700;
+}
+
+#credito.ativo{
+    display: flex;
+}
+
+
+/*CREDITO ACIMA*/
+/*DEBITO ABAIXO*/
+
+#debito{
+    width: 80%;
+    display: none; /*flex*/
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#area-pagamento-debito{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    margin: 0.5vw;
+}
+
+.input-debito{
+    width: 200%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    font-size: 0.7vw;
+}
+
+.input-debito input{ 
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 1px solid #313131;
+    transition: 1s;
+}
+
+.input-debito input:focus{
+    outline: none;
+    border-bottom: 1px solid #c25e00;
+}
+
+#instrucoes-debito{
+    display: flex;
+    flex-direction: column;
+}
+
+#instrucoes-h3-debito{
+    font-size: 0.7vw;
+    color: #616161;
+    font-weight: 700;
+}
+
+#debito.ativo{
+    display: flex;
+}
+
+/*DEBITO ACIMA*/
+/*BOLETO ABAIXO*/
+
+#boleto{
+    display: none;
+
+}
+
+/*BOLETO ACIMA*/
+/*PAGAMENTO-ENDERECO ABAIXO*/
+
+.container-pag-end{
+    margin-inline: 1vw;
+    width: 20%;
+    border-radius: 20px;
+    height: 70vh;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    box-shadow: 0px 2px 2px #cfcfcf;
+}
+
+.container-pag-end hr{
+    margin-top: 4%;
+    width: 100%;
+    color: #202020;
+}
+
+.parteCima{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    width: 80%;
+    height: 80%;
+    margin: 1vw;
+}
+
+.parteCima h3{
+    color: #202020;
+    font-weight: 700;
+    font-size: 0.8vw;
+}
+
+#endereco{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#endereco a{
+
+    text-decoration: none;
+    color: #BF9B6F;
+    font-size: 0.5vw;
+    font-weight: 600;
+    margin-inline: 0.3vw;
+}
+
+#endereco h3{
+    display: flex;
+    flex-direction: column;
+
+}
+
+#sacola-pagamento{
+    width: 100%;
+    height: 77%;
+    margin-bottom: 5%;
+}
+
+#sacola-pagamento h3{
+    color: #202020;
+    font-weight: 700;
+    font-size: 0.8vw;
+}
+
+#sacola-produtos{
+    height: 90%;
+    overflow-y: scroll;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.produto{
+    height: 40%;
+    width: 90%;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 3px 3px #a8a8a8;
+    margin-bottom: 5%;
+}
+
+.produto .container-img{
+    width: 40%;
+}
+
+
+.produto .container-img img{
+    width: 80%;
+}
+
+.produto .parteBaixo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-items: start;
+}
+
+.produto #preco{
+    color: #202020;
+    font-size: 0.9vw;
+    font-weight: 700;
+}
+
+.produto #quantidade{
+    font-size: 0.6vw;
+    color: #616161;
+}
+.produto #quantidade span{
+    font-weight: 700;
+    font-size: 0.9vw;
+    color: #202020;
+}
+
+.produto #totalUnico{
+    color: #616161;
+    font-size: 0.6vw;
+}
+.produto #totalUnico span{
+    font-weight: 700;
+    color: #202020;
+    font-size: 0.9vw;
+}
+
+
+#foto-cortesia{
+    width: 100%;
+    text-align: center;
+}
+
+#foto-cortesia img{
+    margin-inline: auto;
+    max-width: 80%;
+}
+
+.div-confirmar{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-confirmar-compra{
+    color: #f2f2f2;
+    background-color: #BF9B6F;
+    border: none;
+    font-weight: 700;
+    border-radius: 5px;
+    font-size: 1vw;
+    padding: 0.4vw;
+    cursor: pointer;
+}
+
+#titulo-credito{
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#instrucoes-credito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#instrucoes-credito img {
+    width: 50%;
+}
+
+#titulo-debito{
+    display: flex;
+    flex-direction: column;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#instrucoes-debito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+#instrucoes-debito img {
+    width: 50%;
+}
+
+
+@media screen and (max-width:768px){
+    main{
+        flex-direction: column;
+    }
+    #container {
+        margin-inline: 1vw;
+        border-radius: 20px;
+        width: 90%;
+        height: 70vh;
+        background-color: #f2f2f2;
+        display: flex;
+        box-shadow: 0px 2px 2px #cfcfcf;
+    }
+    #intrucoes-pix {
+        background-color: #D9D9D9;
+        padding: 5%;
+        border-end-end-radius: 10px;
+        border-end-start-radius: 10px;
+        font-size: 50%;
+        margin-top: 20%;
+        margin-bottom: 20%;
+    }
+
+
+    #parteCima-pix {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30%;
+        width: 90%;
+        margin-bottom: 10%;
+        font-size: 50%;
+    }
+    #instrucoes-credito {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #instrucoes-credito img{
+        width: 50%;
+    }
+
+    #area-pagamento-credito {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5vw;
+        width: 100%;
+    }
+
+    .input-credito {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        font-size: 0.7vw;
+    }
+
+    #instrucoes-debito {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #instrucoes-debito img{
+        width: 50%;
+    }
+    #area-pagamento-debito {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0.5vw;
+        width: 100%;
+    }
+
+    .input-debito {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        font-size: 0.7vw;
+    }
+    .btn-confirmar-compra {
+        color: #f2f2f2;
+        background-color: #BF9B6F;
+        border: none;
+        font-weight: 700;
+        border-radius: 5px;
+        font-size: 70%;
+        padding: 0.4vw;
+        cursor: pointer;
+        margin-top: 20%;
+    }
+    #container {
+        margin-inline: 1vw;
+        border-radius: 20px;
+        width: 90%;
+        height: 70vh;
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: column;
+        box-shadow: 0px 2px 2px #cfcfcf;
+        align-items: center;
+    }
+    #container #tipo-pagamento {
+        width: 50%;
+        height: 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+        #container #tipo-pagamento {
+            width: 50%;
+            height: 5%;
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr 2fr;
+            justify-content: center;
+            align-items: center;
+            margin-top: 3%;
+
+        }
+        
+#instrucoes-h3-debito{
+    font-size: 100%;
+    color: #616161;
+    font-weight: 700;
+}
+    #instrucoes-h3{
+        font-size: 100%;
+        color: #616161;
+        font-weight: 700;
+    }
+    #pix.ativo {
+        margin-top: 20%;
+        display: flex;
+    }
+    .tipo {
+        height: 100%;
+        width: 100%;
+        color: #616161;
+        font-size: 1.2vw;
+        margin: 20%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: 1s;
+        cursor: pointer;
+        font-size: 50%;
+        margin-right: 25%;
+    }
+}

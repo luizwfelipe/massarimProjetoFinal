@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Buenard:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend+Deca:wght@100..900&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -0.05vw;
+}
+
+input{
+    text-transform: none;
+}
+main{
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.imagens {
+    margin-inline: 5vw;
+    width: 80%; 
+    height: 80%; 
+    max-width: 50vw;
+    max-height: 60vh; 
+}
+
+.imagens img {
+    max-width: 70%;
+    border: 1px solid #202020;
+   }
+
+.info-prod{
+    width: 20vw;
+    margin-inline: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #616161;
+}
+.info-prod #nome-preco{
+    width: 150%;
+    color: #616161;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.info-prod #nome-produto{
+    color: #202020;
+    font-size: 2.5vw;
+    font-weight: 600;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-prod #preco-produto{
+    font-size: 1.5vw;
+}
+
+.info-prod .addBag{
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.info-prod .descricao p{
+    color: #202020;
+    font-size: 0.8vw;
+    margin-top: 2vh;
+}
+
+.info-prod .addBag input:focus{
+    outline: none;
+}
+
+.tamanho{
+    width: 100%;
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding-left: 0;
+    align-items: start;
+}
+.tamanho h4{
+    margin-left: 0;
+    color: #202020;
+    font-size: 1.2vw;
+    font-weight: 600;
+    justify-content: start;
+}
+
+.tamanho h5{
+    font-size: 1.1vw;
+    margin-left: 0;
+    color: #a7a7a7;
+    font-weight: 500;
+}
+.tamanho h5 span{
+    color: #202020;
+    font-weight: 600;
+}
+
+
+.info-prod .addBag button{
+    margin-top: 2vh;
+    font-size: 150%;
+    font-weight: 700;
+    color: #f2f2f2;
+    width: 100%;
+    height: 40%;
+    background-color: #BF9B6F;
+    border: none;
+    cursor: pointer;
+}
+.cartao a{
+    text-decoration: none;
+}
+
+@media screen and (max-width:768px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .imagens{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .imagens img {
+        max-width: 100%;
+        border: 1px solid #202020;
+       }
+    .info-prod{
+        width: 80%;
+        margin-inline: 1vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: #616161;
+    }
+    .info-prod #nome-preco{
+        width: 150%;
+        color: #616161;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    
+    .info-prod #nome-produto{
+        color: #202020;
+        font-size: 80%;
+        font-weight: 800;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .info-prod #preco-produto{
+        font-size: 70%;
+        font-weight: 700;
+    }
+    
+    .info-prod .addBag{
+        margin-top: 2vh;
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+    
+    .info-prod .descricao p{
+        color: #202020;
+        font-size: 60%;
+        font-weight: 600;
+        margin-top: 2vh;
+    }
+    
+    .info-prod .addBag input:focus{
+        outline: none;
+    }
+    
+    .tamanho{
+        width: 100%;
+        margin-top: 2vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 0;
+        align-items: center;
+    }
+    .tamanho h4{
+        margin-left: 0;
+        color: #202020;
+        font-size: 60%;
+        font-weight: 700;
+        justify-content: center;
+    }
+    
+    .tamanho h5{
+        font-size: 60%;
+        margin-left: 0;
+        color: #a7a7a7;
+        font-weight: 700;
+    }
+    .tamanho h5 span{
+        color: #202020;
+        font-weight: 700;
+    }
+    
+    .info-prod .addBag{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .info-prod .addBag button{
+        margin-top: 2vh;
+        font-size: 100%;
+        font-weight: 700;
+        color: #f2f2f2;
+        width: 100%;
+        height: 40%;
+        background-color: #BF9B6F;
+        border: none;
+        cursor: pointer;
+    }
+    .cartao a{
+        text-decoration: none;
+    }
+    .info-prod .addBag button{
+        margin-top: 2vh;
+        font-size: 80%;
+        font-weight: 700;
+        color: #f2f2f2;
+        width: 140%;
+        height: 40%;
+        background-color: #BF9B6F;
+        border: none;
+        cursor: pointer;
+    }
+}
