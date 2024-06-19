@@ -1,5 +1,4 @@
 drop database massarim;
-
 CREATE DATABASE massarim;
 USE massarim;
 
@@ -60,9 +59,8 @@ CREATE TABLE pedido(
     idPedido INT AUTO_INCREMENT PRIMARY KEY,
     rua varchar(100),
     numero INT,
-    precoTotal FLOAT,
-    dataPedido DATE,
     tipoPagamento VARCHAR(20),
+    statusPedido VARCHAR(50),
     fkIdUsuario INT,
     FOREIGN KEY (fkIdUsuario) REFERENCES usuario(idUsuario)
 );
