@@ -408,7 +408,7 @@ header:hover{
     align-items: center;
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:1024px){
 
     #sacola{
         display: none;
