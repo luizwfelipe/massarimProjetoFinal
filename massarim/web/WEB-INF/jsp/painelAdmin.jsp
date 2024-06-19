@@ -25,6 +25,7 @@
                 <h1>PAINEL ADMINISTRATIVO</h1>
             </div>
             <div id="botoes"> <!--div para agrupar os botao-->
+                <a href="./todos-pedidos"><button class="btn-redireciona">VER PEDIDOS</button></a>
                 <a href="./cadastro-de-administrador"><button class="btn-redireciona">CADASTRAR ADM</button></a>
                 <a href="./remover-usuario"><button class="btn-redireciona">REMOVER USUÁRIO</button></a>
                 <a href="./cadastrar-produto"><button class="btn-redireciona">CADASTRAR</button></a>

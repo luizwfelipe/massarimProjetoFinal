@@ -14,16 +14,18 @@ public class PedidoDTO {
     private String rua;
     private int numero;
     private String tipoPagamento;
+    private String statusPedido;
     private int fkIdUsuario;
 
     public PedidoDTO() {
     }
 
-    public PedidoDTO(int idPedido, String rua, int numero, String tipoPagamento, int fkIdUsuario) {
+    public PedidoDTO(int idPedido, String rua, int numero, String tipoPagamento, String statusPedido, int fkIdUsuario) {
         this.idPedido = idPedido;
         this.rua = rua;
         this.numero = numero;
         this.tipoPagamento = tipoPagamento;
+        this.statusPedido = statusPedido;
         this.fkIdUsuario = fkIdUsuario;
     }
 
@@ -59,6 +61,14 @@ public class PedidoDTO {
         this.tipoPagamento = tipoPagamento;
     }
 
+    public String getStatusPedido() {
+        return statusPedido;
+    }
+
+    public void setStatusPedido(String statusPedido) {
+        this.statusPedido = statusPedido;
+    }
+
     public int getFkIdUsuario() {
         return fkIdUsuario;
     }
@@ -66,5 +76,7 @@ public class PedidoDTO {
     public void setFkIdUsuario(int fkIdUsuario) {
         this.fkIdUsuario = fkIdUsuario;
     }
-
+    
+    
+   
 }

@@ -4,14 +4,36 @@
     Author     : Admin
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <script src="https://kit.fontawesome.com/72aebe393c.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="styles/historico-pedido.css">
+        <title>histórico * MSSRM</title>
     </head>
+    <jsp:include page="header.jsp"></jsp:include>
     <body>
-        <h1>Hello World!</h1>
+        <main>
+            <div id="container">
+                <div>
+                    <h2>seus pedidos</h2>
+                </div>
+                <div id="container-pedido">
+                    <c:forEach var="pedido" items="${pedidos}">
+                        <div class="pedido-unico">
+                            <h5>endereço: <span>${pedido.rua}, ${pedido.numero}</span></h5>
+                            <h5>tipo de pagamento: <span>${pedido.tipoPagamento}</span></h5>
+                            <h5>status: <span>${pedido.statusPedido}</span></h5>
+                        </div>
+                    </c:forEach>
+                </div> 
+            </div>
+            
+        </main>
+       
     </body>
 </html>

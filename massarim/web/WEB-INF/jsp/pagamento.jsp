@@ -52,6 +52,7 @@
                         <input type="hidden" name="endereco-rua" value="${enderecoSelecionado.rua}">
                         <input type="hidden" name="endereco-numero" value="${enderecoSelecionado.numero}">
                         <input type="hidden" name="tipo-pagamento" value="pix">
+                        <input type="hidden" name="statusPedido" value="em trânsito">
                         <button type="submit" class="btn-confirmar-compra" id="comprar-pix">confirmar compra</button>
                         </form>
                 </div>
@@ -83,12 +84,13 @@
                             <input type="text" name="cvc-credito" id="cvc-credito" placeholder="CVC do cartão *" required>
                         </div>
                      </div>
-                     <form action="confirmarPedido" method="post">
+                    <form action="confirmarPedido" method="post">
                         <input type="hidden" name="endereco-rua" value="${enderecoSelecionado.rua}">
                         <input type="hidden" name="endereco-numero" value="${enderecoSelecionado.numero}">
                         <input type="hidden" name="tipo-pagamento" value="credito">
+                        <input type="hidden" name="statusPedido" value="em trânsito">
                         <button type="submit" class="btn-confirmar-compra" id="comprar-credito">confirmar compra</button>
-                        </form>
+                    </form>
                 </div>
                 <div id="debito">
                     <div id="titulo-debito">
@@ -122,6 +124,7 @@
                         <input type="hidden" name="endereco-rua" value="${enderecoSelecionado.rua}">
                         <input type="hidden" name="endereco-numero" value="${enderecoSelecionado.numero}">
                         <input type="hidden" name="tipo-pagamento" value="debito">
+                        <input type="hidden" name="statusPedido" value="em trânsito">
                         <button type="submit" class="btn-confirmar-compra" id="comprar-debito">confirmar compra</button>
                         </form>
                     </div>

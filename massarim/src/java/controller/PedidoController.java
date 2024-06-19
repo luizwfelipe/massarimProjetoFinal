@@ -7,6 +7,7 @@ package controller;
 
 import java.io.IOException;
 import java.sql.Date;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +24,7 @@ import model.dao.UsuarioDAO;
  *
  * @author Admin
  */
-@WebServlet(name = "PedidoController", urlPatterns = {"/pedido", "/pedidoConfirmado","/confirmarPedido"})
+@WebServlet(name = "PedidoController", urlPatterns = {"/pedido", "/pedidoConfirmado","/confirmarPedido","/historico-pedidos","/todos-pedidos","/atualizarPedido"})
 public class PedidoController extends HttpServlet {
 
     /**
@@ -40,6 +41,30 @@ public class PedidoController extends HttpServlet {
         String url = request.getServletPath();
         if (url.equals("/pedidoConfirmado")){
             String nextPage = "/WEB-INF/jsp/pedidoConfirmado.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+            dispatcher.forward(request, response);
+        }else if(url.equals("/historico-pedidos")) {
+            int idDoUsuario = 0;
+            Cookie[] cookies = request.getCookies();
+            if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    if (cookie.getName().equals("logar")) {
+                        idDoUsuario = Integer.parseInt(cookie.getValue());
+                        break;
+                    }
+                }
+            }
+            PedidoDAO pedidoDAO = new PedidoDAO();
+            List<PedidoDTO> pedidos = pedidoDAO.readPedidoUnico(idDoUsuario);
+            request.setAttribute("pedidos", pedidos);
+            String nextPage = "/WEB-INF/jsp/historicoPedido.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+            dispatcher.forward(request, response);
+        }else if(url.equals("/todos-pedidos")){
+            PedidoDAO pedidoDAO = new PedidoDAO();
+            List<PedidoDTO> pedidos = pedidoDAO.readPedido();
+            request.setAttribute("pedidos", pedidos);
+            String nextPage = "/WEB-INF/jsp/todosPedidos.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
         }
@@ -78,6 +103,7 @@ public class PedidoController extends HttpServlet {
             pedido.setRua(request.getParameter("endereco-rua"));
             pedido.setNumero(Integer.parseInt(request.getParameter("endereco-numero")));
             pedido.setTipoPagamento(request.getParameter("tipo-pagamento"));
+            pedido.setStatusPedido(request.getParameter("statusPedido"));
             int idDoUsuario = 0;
             Cookie[] cookies = request.getCookies();
             if (cookies != null) {
@@ -95,7 +121,13 @@ public class PedidoController extends HttpServlet {
             createDAO.create(pedido);
 
             response.sendRedirect("./pedidoConfirmado");
-        }else {
+        }else if (url.equals("/atualizarPedido")) {
+            int idPedido = Integer.parseInt(request.getParameter("idPedido"));
+            String statusPedido = request.getParameter("statusPedido");
+            PedidoDAO pedidoDAO = new PedidoDAO();
+            pedidoDAO.atualizarStatus(idPedido, statusPedido);
+            response.sendRedirect("./excluir-produto");
+        }else{
                 String nextPage = "/WEB-INF/jsp/checkout.jsp";
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
                 dispatcher.forward(request, response);

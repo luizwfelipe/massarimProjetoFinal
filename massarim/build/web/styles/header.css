@@ -672,3 +672,14 @@ header:hover{
     font-weight: 800;
     text-decoration: none;
 }
+
+#div-logado{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+#div-logado #historico{
+    margin-inline: 10%;
+}

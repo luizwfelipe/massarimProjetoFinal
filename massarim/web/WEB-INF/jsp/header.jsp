@@ -63,7 +63,11 @@
                         <div class="user">
                             <c:choose>
                                 <c:when test="<%=logado%>">
-                                    <a id="deslogar" href="./logout">Deslogar</a>
+                                    <div id="div-logado">
+                                        <a id="historico" href="./historico-pedidos"><i class="fa-solid fa-clock" style="color: #dfdfdf;"></i></a><a id="deslogar" href="./logout">Deslogar</a>
+                                    </div>
+                                    
+                                    
                                 </c:when>
                                 <c:otherwise>
                                     <a href="./login"><i class="fa-solid fa-user" style="color: #dfdfdf;"></i></a>
