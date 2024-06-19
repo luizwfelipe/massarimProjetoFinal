@@ -58,24 +58,24 @@ CREATE TABLE endereco(
 
 CREATE TABLE pedido(
     idPedido INT AUTO_INCREMENT PRIMARY KEY,
-    fkIdUsuario INT,
-    fkIdEndereco INT,
+    rua varchar(100),
+    numero INT,
     precoTotal FLOAT,
     dataPedido DATE,
-    tipoPagamento VARCHAR(45),
-    FOREIGN KEY (fkIdUsuario) REFERENCES usuario(idUsuario),
-    FOREIGN KEY (fkIdEndereco) REFERENCES endereco(idEndereco)
+    tipoPagamento VARCHAR(20),
+    fkIdUsuario INT,
+    FOREIGN KEY (fkIdUsuario) REFERENCES usuario(idUsuario)
 );
 
-CREATE TABLE pedidoProduto(
-    idPedidoProduto INT AUTO_INCREMENT PRIMARY KEY,
-    fkIdPedido INT,
-    fkIdProduto INT,
-    quantidade INT,
-    precoUnidade FLOAT,
-    FOREIGN KEY (fkIdPedido) REFERENCES pedido(idPedido),
-    FOREIGN KEY (fkIdProduto) REFERENCES produto(idProduto)
-);
+-- CREATE TABLE pedidoProduto(
+--    idPedidoProduto INT AUTO_INCREMENT PRIMARY KEY,
+--    fkIdPedido INT,
+--    fkIdProduto INT,
+--    quantidade INT,
+--    precoUnidade FLOAT,
+ --   FOREIGN KEY (fkIdPedido) REFERENCES pedido(idPedido),
+  --  FOREIGN KEY (fkIdProduto) REFERENCES produto(idProduto)
+-- );
 
 SELECT * FROM usuario;
 
