@@ -10,6 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>cadastrar administrador * MSSRM</title>
+        <link rel="stylesheet" href="styles/cadastroAdm.css">
+        <script src="https://kit.fontawesome.com/72aebe393c.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <h1>CADASTRAR ADMINISTRADOR</h1>

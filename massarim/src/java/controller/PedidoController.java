@@ -6,18 +6,24 @@
 package controller;
 
 import java.io.IOException;
+import java.sql.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.bean.PedidoDTO;
+import model.bean.UsuarioDTO;
+import model.dao.PedidoDAO;
+import model.dao.UsuarioDAO;
 
 /**
  *
  * @author Admin
  */
-@WebServlet(name = "PedidoController", urlPatterns = {"/pedido", "/pedidoConfirmado"})
+@WebServlet(name = "PedidoController", urlPatterns = {"/pedido", "/pedidoConfirmado","/confirmarPedido"})
 public class PedidoController extends HttpServlet {
 
     /**
@@ -65,7 +71,35 @@ public class PedidoController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        String url = request.getServletPath();
+        if (url.equals("/confirmarPedido")) {
+            System.out.println("chegou dopost");
+            PedidoDTO pedido = new PedidoDTO();
+            pedido.setRua(request.getParameter("endereco-rua"));
+            pedido.setNumero(Integer.parseInt(request.getParameter("endereco-numero")));
+            pedido.setTipoPagamento(request.getParameter("tipo-pagamento"));
+            int idDoUsuario = 0;
+            Cookie[] cookies = request.getCookies();
+            if (cookies != null) {
+                for (Cookie cookie : cookies) {
+                    if (cookie.getName().equals("logar")) {
+                        idDoUsuario = Integer.parseInt(cookie.getValue());
+                        break;
+                    }
+                }
+            }
+            pedido.setFkIdUsuario(idDoUsuario);
+
+
+            PedidoDAO createDAO = new PedidoDAO();
+            createDAO.create(pedido);
+
+            response.sendRedirect("./pedidoConfirmado");
+        }else {
+                String nextPage = "/WEB-INF/jsp/checkout.jsp";
+                RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+                dispatcher.forward(request, response);
+            }
     }
 
     /**

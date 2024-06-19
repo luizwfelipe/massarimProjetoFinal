@@ -28,7 +28,7 @@
                 <a href="./cadastro-de-administrador"><button class="btn-redireciona">CADASTRAR ADM</button></a>
                 <a href="./remover-usuario"><button class="btn-redireciona">REMOVER USUÁRIO</button></a>
                 <a href="./cadastrar-produto"><button class="btn-redireciona">CADASTRAR</button></a>
-                <a href="#"><button class="btn-redireciona">EXCLUIR</button></a>
+                <a href="./excluir-produto"><button class="btn-redireciona">EXCLUIR</button></a>
             </div>
         </div>
     </main>

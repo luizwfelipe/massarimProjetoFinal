@@ -146,17 +146,17 @@ public class UsuarioDAO {
             ex.printStackTrace();
         }
     }
-    public void delete(int idProduto){
-    try {
-        Connection conexao = Conexao.conectar();
-        PreparedStatement stmt = conexao.prepareStatement("DELETE FROM usuario WHERE idUsuario = ?");
-        stmt.setInt(1, idProduto);
-        stmt.executeUpdate();
-        
-        JOptionPane.showMessageDialog(null, "Conta deletada");
-    } catch (SQLException e) {
-        e.printStackTrace();
-    }
+    public void delete(int idUsuario) {
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = conexao.prepareStatement("DELETE FROM usuario WHERE idUsuario = ?");
+            stmt.setInt(1, idUsuario);
+            stmt.executeUpdate();
+            stmt.close();
+            conexao.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
     
     public boolean existe(String email) throws SQLException {

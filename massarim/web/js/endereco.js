@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const cepInput = document.getElementById('cep');
     cepInput.addEventListener('input', function () {
-        let value = cepInput.value.replace(/\D/g, '');
+        let value = cepInput.value.replace(/\D/g,'');
         if (value.length > 5) {
             value = value.slice(0, 5) + '-' + value.slice(5, 8);
         }

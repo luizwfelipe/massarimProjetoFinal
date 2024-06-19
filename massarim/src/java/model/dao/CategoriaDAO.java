@@ -13,7 +13,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import model.bean.CategoriaDTO;
-import model.bean.ProdutoDTO;
 
 /**
  *
@@ -57,6 +56,19 @@ public class CategoriaDAO {
             stmt.close();
             conexao.close();
         } catch(SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void delete(int idCategorias) {
+        try {
+            Connection conexao = Conexao.conectar();
+            PreparedStatement stmt = conexao.prepareStatement("DELETE FROM categorias WHERE idCategorias = ?");
+            stmt.setInt(1, idCategorias);
+            stmt.executeUpdate();
+            stmt.close();
+            conexao.close();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

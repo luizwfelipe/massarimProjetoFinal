@@ -24,8 +24,6 @@
                         <h3>crédito</h3></div>
                     <div class="tipo" id="debito-abrir" ><i class="fa-regular fa-credit-card" style="color: #616161;"></i>
                         <h3>débito</h3></div>
-                    <div class="tipo" id="boleto-abrir"><i class="fa-solid fa-barcode"  style="color: #616161;"></i>
-                        <h3>boleto</h3></div>
                 </div>
                 <div id="pix">
                     <div id="parteCima-pix">
@@ -50,7 +48,12 @@
                                 Voilà! Assim que a transação for aprovada, seu pedido será automaticamente processado e concluído.</p>
                         </div>
                     </div>
-                    <div class="div-confirmar"><button class="btn-confirmar-compra" id="comprar-pix">confirmar compra</button></div>
+                    <form action="confirmarPedido" method="post">
+                        <input type="hidden" name="endereco-rua" value="${enderecoSelecionado.rua}">
+                        <input type="hidden" name="endereco-numero" value="${enderecoSelecionado.numero}">
+                        <input type="hidden" name="tipo-pagamento" value="pix">
+                        <button type="submit" class="btn-confirmar-compra" id="comprar-pix">confirmar compra</button>
+                        </form>
                 </div>
                 <div id="credito">
                     <div id="titulo-credito">
@@ -80,7 +83,12 @@
                             <input type="text" name="cvc-credito" id="cvc-credito" placeholder="CVC do cartão *" required>
                         </div>
                      </div>
-                     <div class="div-confirmar"><button class="btn-confirmar-compra" id="comprar-pix">confirmar compra</button></div>
+                     <form action="confirmarPedido" method="post">
+                        <input type="hidden" name="endereco-rua" value="${enderecoSelecionado.rua}">
+                        <input type="hidden" name="endereco-numero" value="${enderecoSelecionado.numero}">
+                        <input type="hidden" name="tipo-pagamento" value="credito">
+                        <button type="submit" class="btn-confirmar-compra" id="comprar-credito">confirmar compra</button>
+                        </form>
                 </div>
                 <div id="debito">
                     <div id="titulo-debito">
@@ -109,7 +117,14 @@
                             <input type="text" name="cvc-credidebitoto" id="cvc-debito" placeholder="CVC do cartão *" required>
                         </div>
                      </div>
-                     <div class="div-confirmar"><button class="btn-confirmar-compra" id="comprar-pix">confirmar compra</button></div>
+                     <div class="div-confirmar">
+                        <form action="confirmarPedido" method="post">
+                        <input type="hidden" name="endereco-rua" value="${enderecoSelecionado.rua}">
+                        <input type="hidden" name="endereco-numero" value="${enderecoSelecionado.numero}">
+                        <input type="hidden" name="tipo-pagamento" value="debito">
+                        <button type="submit" class="btn-confirmar-compra" id="comprar-debito">confirmar compra</button>
+                        </form>
+                    </div>
                 </div>
                 <div id="boleto"></div>
             </div>

@@ -187,18 +187,15 @@ public class ProdutoDAO {
         
         return produto;
     }
-     public void diminuirEstoque(int produtoId, int quantidade){
-        try{
+     public void delete(int idProduto) {
+        try {
             Connection conexao = Conexao.conectar();
-            PreparedStatement stmt = null;
-
-            stmt = conexao.prepareStatement("UPDATE produto SET estoque = estoque - ? WHERE idProduto = ?");
-            stmt.setInt(1, quantidade);
-            stmt.setInt(2, produtoId);
+            PreparedStatement stmt = conexao.prepareStatement("DELETE FROM produto WHERE idProduto = ?");
+            stmt.setInt(1, idProduto);
             stmt.executeUpdate();
             stmt.close();
             conexao.close();
-        }catch(SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }

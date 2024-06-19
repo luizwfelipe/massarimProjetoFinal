@@ -14,14 +14,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import model.bean.CategoriaDTO;
 import model.dao.CategoriaDAO;
-import model.dao.ProdutoDAO;
-
 /**
  *
  * @author Admin
  */
 
-@WebServlet(name = "CategoriaController", urlPatterns = {"/cadastrarCategoria"})
+@WebServlet(name = "CategoriaController", urlPatterns = {"/cadastrarCategoria", "/excluirCategoria"})
 @MultipartConfig
 public class CategoriaController extends HttpServlet {
 
@@ -36,8 +34,7 @@ public class CategoriaController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-      
+        String url = request.getServletPath();
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -67,7 +64,12 @@ public class CategoriaController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
-        if (url.equals("/cadastrarCategoria")) {
+         if (url.equals("/excluirCategoria")){
+                int idCategorias = Integer.parseInt(request.getParameter("idCategorias"));
+                CategoriaDAO categoriaDAO = new CategoriaDAO();
+                categoriaDAO.delete(idCategorias);
+                response.sendRedirect("./excluir-produto");
+        }else if (url.equals("/cadastrarCategoria")) {
             CategoriaDTO novaCategoria = new CategoriaDTO();
             novaCategoria.setNome(request.getParameter("nome-categoria"));
             CategoriaDAO dao = new CategoriaDAO();

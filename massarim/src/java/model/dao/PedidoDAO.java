@@ -33,9 +33,8 @@ public class PedidoDAO {
                 PedidoDTO pedidos = new PedidoDTO();
                 pedidos.setIdPedido(rs.getInt("idProduto"));
                 pedidos.setFkIdUsuario(rs.getInt("fkIdUsuario"));
-                pedidos.setFkIdEndereco(rs.getInt("fkIdEndereco"));
-                pedidos.setPrecoTotal(rs.getFloat("precoTotal"));
-                pedidos.setDataPedido(rs.getDate("dataPedido"));
+                pedidos.setRua(rs.getString("rua"));
+                pedidos.setNumero(rs.getInt("numero"));
                 pedidos.setTipoPagamento(rs.getString("tipoPagamento"));
                 listaPedido.add(pedidos);
             }
@@ -52,13 +51,12 @@ public class PedidoDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             
-            stmt = conexao.prepareStatement("INSERT INTO pedido (fkIdUsuario, fkIdEndereco, precoTotal, dataPedido, tipoPagamento) VALUES (?, ?, ?, ?, ?)");
+            stmt = conexao.prepareStatement("INSERT INTO pedido (fkIdUsuario, rua, numero, tipoPagamento) VALUES (?, ?, ?, ?)");
             
             stmt.setInt(1, p.getFkIdUsuario());
-            stmt.setInt(2, p.getFkIdEndereco());
-            stmt.setFloat(3, p.getPrecoTotal());
-            stmt.setDate(4, p.getDataPedido());
-            stmt.setString(5, p.getTipoPagamento());
+            stmt.setString(2, p.getRua());
+            stmt.setInt(3, p.getNumero());
+            stmt.setString(4, p.getTipoPagamento());
             stmt.executeUpdate();
             stmt.close();
             conexao.close();

@@ -25,7 +25,7 @@ import model.dao.UsuarioDAO;
  *
  * @author Admin
  */
-@WebServlet(name = "UsuarioController", urlPatterns = {"/cadastrar", "/cadastro", "/login", "/logar", "/cadastro-de-administrador", "/cadastrarAdministrador", "/remover-usuario"})
+@WebServlet(name = "UsuarioController", urlPatterns = {"/cadastrar", "/cadastro", "/login", "/logar", "/cadastro-de-administrador", "/cadastrarAdministrador", "/remover-usuario", "/excluir-usuario"})
 public class UsuarioController extends HttpServlet {
 
     /**
@@ -61,7 +61,6 @@ public class UsuarioController extends HttpServlet {
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             request.setAttribute("usuarios", usuarios);
             dispatcher.forward(request, response);
-            
         }
     }
 
@@ -92,7 +91,12 @@ public class UsuarioController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
-        if (url.equals("/cadastrar")) {
+        if (url.equals("/excluir-usuario")) {
+                int idUsuario = Integer.parseInt(request.getParameter("idUsuario"));
+                UsuarioDAO usuarioDAO = new UsuarioDAO();
+                usuarioDAO.delete(idUsuario);
+                response.sendRedirect("./remover-usuario");
+        }else if (url.equals("/cadastrar")) {
             System.out.println("chegou dopost");
             UsuarioDTO user = new UsuarioDTO();
             user.setNome(request.getParameter("nome").equals("") ? "" : request.getParameter("nome"));
@@ -147,7 +151,6 @@ public class UsuarioController extends HttpServlet {
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
                 dispatcher.forward(request, response);
             }
-
         }
     }
 

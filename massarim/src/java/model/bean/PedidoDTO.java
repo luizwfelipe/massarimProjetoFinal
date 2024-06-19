@@ -5,79 +5,66 @@
  */
 package model.bean;
 
-import java.sql.Date;
-
 /**
  *
  * @author Senai
  */
 public class PedidoDTO {
     private int idPedido;
-    private int fkIdUsuario;
-    private int fkIdEndereco;
-    private float precoTotal;
-    private Date dataPedido;
+    private String rua;
+    private int numero;
     private String tipoPagamento;
+    private int fkIdUsuario;
 
     public PedidoDTO() {
     }
 
-    public PedidoDTO(int idPedido, int fkIdUsuario, int fkIdEndereco, float precoTotal, Date dataPedido, String tipoPagamento) {
+    public PedidoDTO(int idPedido, String rua, int numero, String tipoPagamento, int fkIdUsuario) {
         this.idPedido = idPedido;
-        this.fkIdUsuario = fkIdUsuario;
-        this.fkIdEndereco = fkIdEndereco;
-        this.precoTotal = precoTotal;
-        this.dataPedido = dataPedido;
+        this.rua = rua;
+        this.numero = numero;
         this.tipoPagamento = tipoPagamento;
+        this.fkIdUsuario = fkIdUsuario;
     }
 
-    public int getIdPedido(){
+    public int getIdPedido() {
         return idPedido;
     }
 
-    public void setIdPedido(int idPedido){
+    public void setIdPedido(int idPedido) {
         this.idPedido = idPedido;
+    }
+
+    public String getRua() {
+        return rua;
+    }
+
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public String getTipoPagamento() {
+        return tipoPagamento;
+    }
+
+    public void setTipoPagamento(String tipoPagamento) {
+        this.tipoPagamento = tipoPagamento;
     }
 
     public int getFkIdUsuario() {
         return fkIdUsuario;
     }
 
-    public void setFkIdUsuario(int fkIdUsuario){
+    public void setFkIdUsuario(int fkIdUsuario) {
         this.fkIdUsuario = fkIdUsuario;
     }
 
-    public int getFkIdEndereco() {
-        return fkIdEndereco;
-    }
-
-    public void setFkIdEndereco(int fkIdEndereco){
-        this.fkIdEndereco = fkIdEndereco;
-    }
-
-    public float getPrecoTotal() {
-        return precoTotal;
-    }
-
-    public void setPrecoTotal(float precoTotal){
-        this.precoTotal = precoTotal;
-    }
-
-    public Date getDataPedido() {
-        return dataPedido;
-    }
-
-    public void setDataPedido(Date dataPedido){
-        this.dataPedido = dataPedido;
-    }
-
-    public String getTipoPagamento(){
-        return tipoPagamento;
-    }
-
-    public void setTipoPagamento(String tipoPagamento){
-        this.tipoPagamento = tipoPagamento;
-    }
-    
-    
 }

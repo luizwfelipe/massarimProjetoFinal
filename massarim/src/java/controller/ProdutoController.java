@@ -25,12 +25,13 @@ import model.bean.CategoriaDTO;
 import model.bean.ProdutoDTO;
 import model.dao.CategoriaDAO;
 import model.dao.ProdutoDAO;
+import model.dao.UsuarioDAO;
 
 /**
  *
  * @author Admin
  */
-@WebServlet(name = "ProdutoController", urlPatterns = {"/produtos", "/cadastrar-produto", "/home", "/cadastrarProduto", "/buscar-produtos", "/produto-massarim", "/revisao"})
+@WebServlet(name = "ProdutoController", urlPatterns = {"/produtos", "/cadastrar-produto", "/home", "/cadastrarProduto", "/buscar-produtos", "/produto-massarim", "/revisao","/excluir-produto","/excluirProduto"})
 @MultipartConfig
 public class ProdutoController extends HttpServlet {
 
@@ -60,7 +61,6 @@ public class ProdutoController extends HttpServlet {
             String nextPage = "/WEB-INF/jsp/index.jsp";
             RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
             dispatcher.forward(request, response);
-
         } else if (url.equals("/buscar-produtos")){
             String busca = request.getParameter("busca") != null ? request.getParameter("busca") : "";
             if (busca.equals("")) {
@@ -103,6 +103,12 @@ public class ProdutoController extends HttpServlet {
                 dispatcher.forward(request, response);
             }
 
+        }else if(url.equals("/excluir-produto")){
+            List<ProdutoDTO> produto = produtosDAO.readProdutos();
+            request.setAttribute("produto", produto);
+            String nextPage = "/WEB-INF/jsp/excluir.jsp";
+            RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);
+            dispatcher.forward(request, response);
         }
     }
 
@@ -133,7 +139,12 @@ public class ProdutoController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = request.getServletPath();
-        if (url.equals("/cadastrarProduto")) {
+        if (url.equals("/excluirProduto")){
+                int idProduto = Integer.parseInt(request.getParameter("idProduto"));
+                ProdutoDAO produtoDAO = new ProdutoDAO();
+                produtoDAO.delete(idProduto);
+                response.sendRedirect("./excluir-produto");
+        }else if (url.equals("/cadastrarProduto")) {
             ProdutoDTO newProduto = new ProdutoDTO();
             newProduto.setNome(request.getParameter("nome"));
             newProduto.setEstoque(Integer.parseInt(request.getParameter("estoque")));
@@ -163,6 +174,7 @@ public class ProdutoController extends HttpServlet {
             produtosD.create(newProduto);
             response.sendRedirect("./cadastrar-produto");
         }
+        
     }
 
     /**
