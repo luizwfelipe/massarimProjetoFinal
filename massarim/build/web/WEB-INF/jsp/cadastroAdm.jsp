@@ -14,8 +14,7 @@
         <script src="https://kit.fontawesome.com/72aebe393c.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <h1>CADASTRAR ADMINISTRADOR</h1>
-        <div class="form">
+        <main>
             <form action="cadastrarAdministrador" method="POST">
                 <h1>Cadastrar</h1>
                 <div class="input">
@@ -43,6 +42,10 @@
                     <input type="date" name="dataNascimento" id="dataNascimento" placeholder="Digite sua data de nascimento..." required>
                 </div>
                 <button type="submit" class="btn btn-cadastro btn-block">Cadastrar administrador</button>
-                </form>
+            </form>
+        </main>
+        <h1>CADASTRAR ADMINISTRADOR</h1>
+        <div class="form">
+            
     </body>
 </html>

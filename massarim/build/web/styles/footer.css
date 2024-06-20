@@ -88,7 +88,7 @@ footer{
     font-size: 0.6vw;
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:1024px){
     #cima #paginas a{
         color: #202020;
         font-weight: 700;

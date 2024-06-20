@@ -452,6 +452,9 @@ main{
     width: 50%;
 }
 
+
+none
+
 #titulo-debito{
     display: flex;
     flex-direction: column;
@@ -471,7 +474,7 @@ main{
 }
 
 
-@media screen and (max-width:768px){
+@media screen and (max-width:1165px){
     main{
         flex-direction: column;
     }
@@ -529,7 +532,7 @@ main{
         flex-direction: column;
         align-items: start;
         justify-content: space-between;
-        font-size: 0.7vw;
+        font-size: 70%;
     }
 
     #instrucoes-debito {
@@ -556,7 +559,7 @@ main{
         flex-direction: column;
         align-items: start;
         justify-content: space-between;
-        font-size: 0.7vw;
+        font-size: 70%;
     }
     .btn-confirmar-compra {
         color: #f2f2f2;
@@ -583,23 +586,17 @@ main{
     #container #tipo-pagamento {
         width: 50%;
         height: 5%;
-        display: flex;
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr 2fr;
         justify-content: center;
         align-items: center;
+        margin-top: 3%;
+        font-size: 150%;
     }
-        #container #tipo-pagamento {
-            width: 50%;
-            height: 5%;
-            display: grid;
-            grid-template-columns: 2fr 2fr 2fr 2fr;
-            justify-content: center;
-            align-items: center;
-            margin-top: 3%;
 
-        }
         
 #instrucoes-h3-debito{
-    font-size: 100%;
+font-size: 100%;
     color: #616161;
     font-weight: 700;
 }
@@ -612,7 +609,7 @@ main{
         margin-top: 20%;
         display: flex;
     }
-    .tipo {
+    .tipo{
         height: 100%;
         width: 100%;
         color: #616161;
@@ -625,5 +622,159 @@ main{
         cursor: pointer;
         font-size: 50%;
         margin-right: 25%;
+    }
+    .container-pag-end{
+        margin-top: 5%;
+        margin-inline: 1vw;
+        width: 90%;
+        border-radius: 20px;
+        height: 70vh;
+        background-color: #f2f2f2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        box-shadow: 0px 2px 2px #cfcfcf;
+    }
+    #sacola-pagamento h3 {
+        color: #202020;
+        font-weight: 700;
+        font-size: 120%;
+    }
+    #endereco h3 {
+        display: flex;
+        flex-direction: column;
+        font-size: 100%;
+    }
+    #endereco a {
+        text-decoration: none;
+        color: #BF9B6F;
+        font-size: 50%;
+        font-weight: 600;
+        margin-inline: 0.3vw;
+    }
+    .produto #preco {
+        color: #202020;
+        font-size: 100%;
+        font-weight: 700;
+    }
+    .produto #quantidade {
+        font-size: 50%;
+        color: #616161;
+    }
+    .produto #quantidade span {
+        font-weight: 700;
+        font-size: 180%;
+        color: #202020;
+    }
+    .produto #totalUnico {
+        color: #616161;
+        font-size: 50%;
+    }
+    .produto #totalUnico span {
+        font-weight: 700;
+        color: #202020;
+        font-size: 170%;
+    }    
+    #code-pix {
+        color: #202020;
+        background-color: #fff;
+        padding: 2%;
+        font-size: 100%;
+        border-start-end-radius: 10px;
+        box-shadow: 0px 2px 2px #cfcfcf;
+    }
+    #btn-copiar-pix {
+        margin-top: 2%;
+        width: 100%;
+        background-color: #BF9B6F;
+        padding: 0.2vw;
+        color: #f2f2f2;
+        font-weight: 700;
+        font-size: 90%;
+        border: none;
+        cursor: pointer;
+    }
+    .tipo {
+        height: 100%;
+        width: 100%;
+        color: #616161;
+        margin: 20%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: 1s;
+        cursor: pointer;
+        font-size: 30%;
+        margin-right: 25%;
+    }
+    #container #tipo-pagamento {
+        width: 50%;
+        height: 5%;
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3%;
+        font-size: 150%;
+    }
+    
+}
+
+
+@media screen and (max-width:1165px) and (min-width:769px){
+    #pix.ativo {
+        margin-top: -5%;
+        display: flex;
+        padding: 10vh;
+    }
+    .tipo {
+        height: 100%;
+        width: 100%;
+        color: #616161;
+        margin: 20%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        transition: 1s;
+        cursor: pointer;
+        font-size: 30%;
+    }
+    #container #tipo-pagamento {
+        width: 50%;
+        height: 5%;
+        display: grid;
+        grid-template-columns: 2fr 2fr 2fr;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3%;
+        font-size: 150%;
+    }
+    .produto {
+        height: 40%;
+        width: 90%;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: none;
+        margin-bottom: 5%;
+    }
+    .input-credito {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        font-size: 70%;
+    }
+    .input-debito {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-between;
+        font-size: 70%;
     }
 }

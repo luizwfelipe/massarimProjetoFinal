@@ -9,7 +9,6 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <script src="https://kit.fontawesome.com/72aebe393c.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="styles/pagamento.css">
         <title>pagamento * MSSRM</title>
     </head>
@@ -18,11 +17,11 @@
         <main>
             <div id="container">
                 <div id="tipo-pagamento">
-                    <div class="tipo" id="pix-abrir"><i class="fa-brands fa-pix"  style="color: #616161;"></i>
+                    <div class="tipo" id="pix-abrir">
                         <h3>pix</h3></div>
-                    <div class="tipo" id="credito-abrir"><i class="fa-solid fa-credit-card"  style="color: #616161;"></i>
+                    <div class="tipo" id="credito-abrir">
                         <h3>crédito</h3></div>
-                    <div class="tipo" id="debito-abrir" ><i class="fa-regular fa-credit-card" style="color: #616161;"></i>
+                    <div class="tipo" id="debito-abrir" >
                         <h3>débito</h3></div>
                 </div>
                 <div id="pix">

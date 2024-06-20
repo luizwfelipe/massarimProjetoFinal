@@ -653,8 +653,27 @@ header:hover{
     #down-cima .logo{
         width: 30%;
     }
+
+    .up{
+        align-items: center;
+        justify-content: center;
+    }
     .up p{
         display: none;
+    }
+    #painel-adm{
+        font-size: 80%;
+        color: #BF9B6F;
+        font-weight: 800;
+        text-decoration: none;
+        display: flex;
+        flex-direction: column;
+    }
+    #painel-adm span{
+        font-size: 80%;
+        color: #BF9B6F;
+        font-weight: 800;
+        text-decoration: none;
     }
 
 }
@@ -667,6 +686,12 @@ header:hover{
 }
 
 #painel-adm{
+    font-size: 100%;
+    color: #BF9B6F;
+    font-weight: 800;
+    text-decoration: none;
+}
+#painel-adm span{
     font-size: 100%;
     color: #BF9B6F;
     font-weight: 800;

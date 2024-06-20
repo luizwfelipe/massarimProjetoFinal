@@ -52,7 +52,7 @@
                 <div class="up">
                     <c:choose>
                         <c:when test="<%=logarAdministativo%>">
-                            <a id="painel-adm" href="./painel-adm">PAINEL ADMINISTRADOR</a>
+                            <a id="painel-adm" href="./painel-adm">PAINEL <span>ADMINISTRADOR</span></a>
                         </c:when>
                         <c:otherwise>
                             <p>ENVIO PARA TODO O BRASIL</p>

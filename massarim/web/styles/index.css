@@ -96,13 +96,9 @@ a{
 }
 
 
-@media screen and (max-width:1024px){
-    .cartao-info{
-        font-size: 250%;
-    }
-}
 
-@media screen and (max-width:768px){
+
+@media screen and (max-width:1024px){
     main{
         display: flex;
         flex-direction: column;
