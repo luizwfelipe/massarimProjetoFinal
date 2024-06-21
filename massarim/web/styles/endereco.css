@@ -35,6 +35,8 @@ main{
     box-shadow: 0px 2px 2px #cfcfcf;
 }
 
+
+
 #cima{
     width: 100%;
     height: 20%;
@@ -203,6 +205,7 @@ form{
     color: #202020;
 }
 
+
 @media screen and (max-width:768px){
     #inputs-lados {
         flex-direction: column;
@@ -298,21 +301,56 @@ form{
     }
     
     .endereco-unico h3 {
-        font-size: 70%;
+        font-size: 100%;
         color: #616161;
     }
     .endereco-unico h3 span {
         font-size: 170%;
         color: #202020;
     }
+
     #escolha-endereco button {
         background-color: #BF9B6F;
         color: #f2f2f2;
         border: none;
         box-shadow: 0px 2px 2px #cfcfcf;
-        font-size: 130%;
+        font-size: 200%;
         font-weight: 700;
         padding: 0.2vw;
         cursor: pointer;
     }
+}
+
+@media screen and (max-width:1165px) and (min-width:769px){
+    .btn-endereco {
+        width: 50%;
+        background-color: #BF9B6F;
+        padding: 0.2vw;
+        color: #f2f2f2;
+        font-weight: 700;
+        font-size: 90%;
+        border: none;
+        border-end-end-radius: 10px;
+        border-end-start-radius: 10px;
+        cursor: pointer;
+    }
+    .endereco-unico h3 span {
+        font-size: 300%;
+        color: #202020;
+    }
+    .endereco-unico h3 {
+        font-size: 110%;
+        color: #616161;
+    }
+    #escolha-endereco button {
+        background-color: #BF9B6F;
+        color: #f2f2f2;
+        border: none;
+        box-shadow: 0px 2px 2px #cfcfcf;
+        font-size: 200%;
+        font-weight: 700;
+        padding: 0.2vw;
+        cursor: pointer;
+    }
+    
 }

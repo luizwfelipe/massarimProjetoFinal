@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 const divParteCima = document.createElement("div");
                 divParteCima.classList.add("parteCima");
-                divParteCima.innerHTML = `<h3>${produto.nome}</h3>`;
+                divParteCima.innerHTML = `<h3>${produto.nome}</h3><h3>${produto.tamanho}</h3>`;
 
                 const divParteBaixo = document.createElement("div");
                 divParteBaixo.classList.add("parteBaixo");
@@ -135,7 +135,7 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function calculateTotal(){
-        const total = cart.reduce((acc, curr) => acc + (curr.preco * curr.quantidade), 0);
+        const total = cart.reduce((conta, atual) => conta + (atual.preco * atual.quantidade), 0);
         document.querySelector('#tt span').textContent = 'R$ ' + total.toFixed(2);
     }
 
@@ -150,6 +150,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const product ={
                 image: document.querySelector('.imagens img').src,
                 nome: document.getElementById('nome-produto').textContent,
+                tamanho: document.getElementById('tamanho-produto').textContent,
                 preco: parseFloat(document.getElementById('preco-produto').textContent.replace('R$','').trim()),
                 quantidade: 1,
                 estoque: parseInt(button.getAttribute('data-estoque'))

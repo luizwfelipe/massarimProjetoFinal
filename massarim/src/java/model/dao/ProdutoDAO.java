@@ -30,6 +30,7 @@ public class ProdutoDAO {
                 produtos.setDescricao(rs.getString("descricao"));
                 produtos.setPreco(rs.getFloat("preco"));
                 produtos.setEstoque(rs.getInt("estoque"));
+                produtos.setTamanho(rs.getString("tamanho"));
                 produtos.setImagem(rs.getString("imagem"));
                 listaProduto.add(produtos);
             }
@@ -47,14 +48,15 @@ public class ProdutoDAO {
             Connection conexao = Conexao.conectar();
             PreparedStatement stmt = null;
             
-            stmt = conexao.prepareStatement("INSERT INTO produto (nome, fkIdCategoria, preco, descricao, estoque, imagem) VALUES (?, ?, ?, ?, ?, ?)");
+            stmt = conexao.prepareStatement("INSERT INTO produto (nome, fkIdCategoria, preco, descricao, estoque, tamanho, imagem) VALUES (?, ?, ?, ?, ?, ?, ?)");
             
             stmt.setString(1, p.getNome());
             stmt.setInt(2, p.getFkIdCategoria());
             stmt.setFloat(3, p.getPreco());
             stmt.setString(4, p.getDescricao());
             stmt.setInt(5, p.getEstoque());
-            stmt.setString(6, p.getImagem());
+            stmt.setString(6, p.getTamanho());
+            stmt.setString(7, p.getImagem());
             
             stmt.executeUpdate();
             stmt.close();
@@ -85,6 +87,7 @@ public class ProdutoDAO {
                 prod.setDescricao(rs.getString("descricao"));
                 prod.setPreco(rs.getFloat("preco"));
                 prod.setEstoque(rs.getInt("estoque"));
+                prod.setTamanho(rs.getString("tamanho"));
                 prod.setImagem(rs.getString("imagem"));
 
         
@@ -117,6 +120,7 @@ public class ProdutoDAO {
                 prod.setDescricao(rs.getString("descricao"));
                 prod.setPreco(rs.getFloat("preco"));
                 prod.setEstoque(rs.getInt("estoque"));
+                prod.setTamanho(rs.getString("tamanho"));
                 prod.setImagem(rs.getString("imagem"));
                 
                 resultadoBusca.add(prod);
@@ -148,6 +152,7 @@ public class ProdutoDAO {
                 prod.setDescricao(rs.getString("descricao"));
                 prod.setPreco(rs.getFloat("preco"));
                 prod.setEstoque(rs.getInt("estoque"));
+                prod.setTamanho(rs.getString("tamanho"));
                 prod.setImagem(rs.getString("imagem"));
                 
                 resultadoBusca.add(prod);

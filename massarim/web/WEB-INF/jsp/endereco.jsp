@@ -98,7 +98,9 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn-endereco">cadastrar endereço</button>
+
+                            <button type="submit" class="btn-endereco">cadastrar endereço</button>
+
                     </form>
                 </div>
             </div>

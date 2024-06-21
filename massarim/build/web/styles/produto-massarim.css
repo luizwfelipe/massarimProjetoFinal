@@ -92,7 +92,7 @@ main{
     outline: none;
 }
 
-.tamanho{
+#tamanho{
     width: 100%;
     margin-top: 2vh;
     display: flex;
@@ -101,25 +101,17 @@ main{
     padding-left: 0;
     align-items: start;
 }
-.tamanho h4{
-    margin-left: 0;
-    color: #202020;
-    font-size: 1.2vw;
-    font-weight: 600;
-    justify-content: start;
-}
-
-.tamanho h5{
+#tamanho h5{
     font-size: 1.1vw;
     margin-left: 0;
     color: #a7a7a7;
-    font-weight: 500;
-}
-.tamanho h5 span{
-    color: #202020;
     font-weight: 600;
 }
-
+#tamanho h5 #tamanho-produto{
+    font-size: 1.7vw;
+    color: #202020;
+    font-weight: 800;
+}
 
 .info-prod .addBag button{
     margin-top: 2vh;
@@ -134,6 +126,21 @@ main{
 }
 .cartao a{
     text-decoration: none;
+}
+
+.descricao{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    text-align: start;
+}
+.descricao p{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+    text-align: start;
 }
 
 @media screen and (max-width:768px){
@@ -203,7 +210,7 @@ main{
         outline: none;
     }
     
-    .tamanho{
+    #tamanho{
         width: 100%;
         margin-top: 2vh;
         display: flex;
@@ -212,24 +219,14 @@ main{
         padding-left: 0;
         align-items: center;
     }
-    .tamanho h4{
-        margin-left: 0;
-        color: #202020;
-        font-size: 60%;
-        font-weight: 700;
-        justify-content: center;
-    }
-    
-    .tamanho h5{
-        font-size: 60%;
+    #tamanho h5{
+        font-size: 100%;
         margin-left: 0;
         color: #a7a7a7;
-        font-weight: 700;
+        font-weight: 600;
     }
-    .tamanho h5 span{
-        color: #202020;
-        font-weight: 700;
-    }
+    
+    
     
     .info-prod .addBag{
         display: flex;
@@ -260,5 +257,24 @@ main{
         background-color: #BF9B6F;
         border: none;
         cursor: pointer;
+    }
+    .descricao{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    .descricao p{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+    #tamanho h5 #tamanho-produto{
+        font-size: 120%;
+        color: #202020;
+        font-weight: 700;
     }
 }

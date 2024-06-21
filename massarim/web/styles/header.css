@@ -33,14 +33,16 @@ input{
     font-family: 'Prompt', 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
 }
 
-#sacola a{
+#sacola a {
     color: #f2f2f2;
     text-decoration: none;
+    width: 50%;
 }
 
 #sacola.ativo{
     display: grid;
 }
+
 
 #sacola #bg-bag{
     background-color: #2020203f;
@@ -121,13 +123,13 @@ input{
     text-align: center;
 }
 
-.parteCima{
+.parteCima {
     width: 100%;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     white-space: nowrap;
-    font-family: 'Prompt', 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
+    font-family: 'Prompt', 'Sofia Sans Extra Condensed', 'Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
 }
 
 .parteCima h3{
@@ -203,9 +205,9 @@ input{
     display: none;
 }
 
-#sacola .foot-bag #checkout.ativo{
-    font-family: 'Prompt', 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
-    width: 80%;
+#sacola .foot-bag #checkout.ativo {
+    font-family: 'Prompt', 'Sofia Sans Extra Condensed', 'Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
+    width: 100%;
     border: none;
     border-end-start-radius: 10px;
     border-end-end-radius: 10px;
@@ -470,8 +472,8 @@ header:hover{
         width: 30%;
     }
     
-    #sacola #container-bag #container-prod .container-img img{
-        max-width: 80%;
+    #sacola #container-bag #container-prod .container-img img {
+        max-width: 50%;
     }
     
     #sacola #container-bag #container-prod .container-info{
@@ -517,21 +519,20 @@ header:hover{
         text-align: center;
     }
     
-    .parteCima{
+    .parteCima {
         width: 100%;
         display: flex;
-        justify-content: start;
+        justify-content: space-between;
         align-items: center;
         white-space: nowrap;
-        font-family: 'Prompt', 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
+        font-family: 'Prompt', 'Sofia Sans Extra Condensed', 'Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
     }
     
     .parteCima h3{
         white-space: nowrap;
         width: 100%;
-        text-align: start;
+        text-align: center;
     }
-    
     .parteBaixo{
         width: 100%;
         display: flex;

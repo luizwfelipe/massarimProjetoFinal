@@ -96,7 +96,12 @@ a{
 }
 
 
-
+.cartao-info .tamanho-produto{
+    font-size: 0.7vw;
+    color: #616161;
+    font-weight: 700;
+    text-decoration: none;
+}
 
 @media screen and (max-width:1024px){
     main{
@@ -164,6 +169,12 @@ a{
         text-decoration: none;
     }
     .cartao-info .preco-produto{
+        font-size: 100%;
+        color: #616161;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    .cartao-info .tamanho-produto{
         font-size: 100%;
         color: #616161;
         font-weight: 700;

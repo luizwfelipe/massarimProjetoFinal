@@ -117,7 +117,7 @@
                 <div id="container-prod"></div>
                 <div class="foot-bag">
                     <p id="tt">Total: <span>R$0,0</span></p>
-                    <button id="checkout"><a href="./revisao">checkout</a></button>
+                    <a href="./revisao"><button id="checkout">checkout</button></a>
                 </div>
             </div>
         </div>

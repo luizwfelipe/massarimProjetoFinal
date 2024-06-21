@@ -35,6 +35,7 @@
                     <div class="cartao-info">
                         <h5 class="nome-produto">${produtos.nome}</h5>
                         <p class="preco-produto">R$ ${produtos.preco}</p>
+                        <p class="tamanho-produto">${produtos.tamanho}</p>
                     </div>
                 </div>
                     </a>
