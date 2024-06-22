@@ -1,4 +1,4 @@
-drop database massarim;
+
 CREATE DATABASE massarim;
 USE massarim;
 
@@ -18,10 +18,6 @@ CREATE TABLE categorias(
     nome VARCHAR(40)
 );
 
-CREATE TABLE tamanho(
-	idTamanho INT AUTO_INCREMENT PRIMARY KEY,
-    tamanho VARCHAR(40)
-    );
 
 
 
@@ -29,13 +25,12 @@ CREATE TABLE produto(
     idProduto INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(45),
     fkIdCategoria INT,
-    fkIdTamanho INT,
     descricao TEXT,
     preco FLOAT,
     estoque INT,
+    tamanho VARCHAR(5),
     imagem VARCHAR(255),
-    FOREIGN KEY (fkIdCategoria) REFERENCES categorias(idCategorias),
-    FOREIGN KEY (fkIdTamanho) REFERENCES tamanho(idTamanho)
+    FOREIGN KEY (fkIdCategoria) REFERENCES categorias(idCategorias)
 );
 
 
@@ -90,5 +85,5 @@ INSERT INTO categorias (nome) VALUES
 ('Sapatos'),
 ('Camisas');
 
-INSERT INTO produto (nome, fkIdCategoria,descricao,preco ,estoque ,imagem) VALUES
-('SALTO PRETO', 4,'salto lindo, disponível na cor preta, clássico, chique e vesátil.',199.99,9,'assets/sapato.jpg');
+INSERT INTO produto (nome, fkIdCategoria,descricao,preco ,estoque, tamanho ,imagem) VALUES
+('SALTO PRETO', 4,'salto lindo, disponível na cor preta, clássico, chique e vesátil.',199.99,9,'38','assets/sapato.jpg');
