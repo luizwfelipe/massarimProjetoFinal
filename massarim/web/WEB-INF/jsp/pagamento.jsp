@@ -101,6 +101,7 @@
                     </div>
 
                      <div id="area-pagamento-debito">
+                        <form action="confirmarPedido" method="post">
                         <div class="input-debito">
                             <label for="numero-debito">Número do Cartão</label>
                             <input type="text" name="numero-debito" id="numero-debito" placeholder="Número do Cartão *" required>
@@ -119,16 +120,16 @@
                         </div>
                      </div>
                      <div class="div-confirmar">
-                        <form action="confirmarPedido" method="post">
+                        
                         <input type="hidden" name="endereco-rua" value="${enderecoSelecionado.rua}">
                         <input type="hidden" name="endereco-numero" value="${enderecoSelecionado.numero}">
                         <input type="hidden" name="tipo-pagamento" value="debito">
                         <input type="hidden" name="statusPedido" value="em trânsito">
                         <button type="submit" class="btn-confirmar-compra" id="comprar-debito">confirmar compra</button>
-                        </form>
+                        
                     </div>
+                </form>
                 </div>
-                <div id="boleto"></div>
             </div>
             <div class="container-pag-end">
                 <div class="parteCima">

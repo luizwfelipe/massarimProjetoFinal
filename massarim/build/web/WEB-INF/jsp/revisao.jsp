@@ -30,7 +30,7 @@
                     <h3 class="info-confirmar" id="frete-revisao">frete: <span>grátis</span></h3>
 
                     <hr>
-                    <h3 class="info-confirmar" id="total-pedido">total do pedido: <span></span></h3>
+                    <h3 class="info-confirmar" id="total-pedido">total do pedido: <span>R$0,0</span></h3>
                     <a href="./endereco"><button id="confirmarCompra">continuar checkout</button></a>
                     <a href="./home">adicionar mais produtos</a>
                 </div>

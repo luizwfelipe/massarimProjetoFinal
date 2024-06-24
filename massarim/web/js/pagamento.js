@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", function(){
     const botaoCredito = document.getElementById("credito-abrir");
     const botaoDebito = document.getElementById("debito-abrir");
 
+    const pix = document.getElementById("pix");
+    const credito = document.getElementById("credito");
+    const debito = document.getElementById("debito");
+
     botaoPix.addEventListener("click", function(){
         pix.classList.add("ativo");
         credito.classList.remove("ativo");
@@ -77,4 +81,78 @@ document.addEventListener("DOMContentLoaded", function(){
         document.querySelector('#totalCompra span').textContent = 'R$ '+ total.toFixed(2);
     }
     carregarCarrinho();
+
+    // Validação e máscaras dos inputs de pagamento
+    function aplicarMascarasEValidacoes() {
+        const numeroCredito = document.getElementById('numero-credito');
+        const nomeCredito = document.getElementById('nome-credito');
+        const validadeCredito = document.getElementById('validade-credito');
+        const cvcCredito = document.getElementById('cvc-credito');
+
+        const numeroDebito = document.getElementById('numero-debito');
+        const nomeDebito = document.getElementById('nome-debito');
+        const validadeDebito = document.getElementById('validade-debito');
+        const cvcDebito = document.getElementById('cvc-debito');
+
+        function mascaraCartao(input) {
+            input.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length > 16) value = value.substring(0, 16);
+                value = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+                e.target.value = value;
+            });
+        }
+
+        function validarNome(input) {
+            input.addEventListener('input', function(e) {
+                const regex = /^[A-Za-z]+ [A-Za-z]+$/;
+                if (!regex.test(e.target.value)) {
+                    input.setCustomValidity("Nome deve conter pelo menos um espaço.");
+                } else {
+                    input.setCustomValidity("");
+                }
+            });
+        }
+
+        function mascaraValidade(input) {
+            input.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                if (value.length >= 2) {
+                    value = value.substring(0, 2) + '/' + value.substring(2, 4);
+                }
+                e.target.value = value.substring(0, 5);
+            });
+
+            input.addEventListener('blur', function(e) {
+                const [month, year] = e.target.value.split('/');
+                const currentDate = new Date();
+                const currentMonth = currentDate.getMonth() + 1;
+                const currentYear = currentDate.getFullYear() % 100;
+                if ((parseInt(year) < currentYear) || (parseInt(year) === currentYear && parseInt(month) < currentMonth)) {
+                    input.setCustomValidity("Data de validade deve ser no futuro.");
+                } else {
+                    input.setCustomValidity("");
+                }
+            });
+        }
+
+        function mascaraCVC(input) {
+            input.addEventListener('input', function(e) {
+                let value = e.target.value.replace(/\D/g, '');
+                e.target.value = value.substring(0, 3);
+            });
+        }
+
+        mascaraCartao(numeroCredito);
+        validarNome(nomeCredito);
+        mascaraValidade(validadeCredito);
+        mascaraCVC(cvcCredito);
+
+        mascaraCartao(numeroDebito);
+        validarNome(nomeDebito);
+        mascaraValidade(validadeDebito);
+        mascaraCVC(cvcDebito);
+    }
+
+    aplicarMascarasEValidacoes();
 });

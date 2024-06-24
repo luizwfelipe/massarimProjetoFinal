@@ -2,11 +2,11 @@ document.addEventListener("DOMContentLoaded", function(){
     const sacolaContainer = document.getElementById("container-revisao");
 
     function carregarCarrinho(){
-        const storedCart = JSON.parse(localStorage.getItem('cart'));
+        const storedSacola = JSON.parse(localStorage.getItem('cart'));
 
         sacolaContainer.innerHTML = "";
 
-        storedCart.forEach((produto,index) => {
+        storedSacola.forEach((produto,index) => {
             const divP = document.createElement("div");
             divP.classList.add("produto");
 
@@ -42,12 +42,13 @@ document.addEventListener("DOMContentLoaded", function(){
             const btnDelete = divParteBaixo.querySelector('.botaoTira');
 
             btnDecrementar.addEventListener('click', function() {
-                const currentQuantity = parseInt(inputQuantidade.value);
-                if (currentQuantity > 1) {
-                    inputQuantidade.value = currentQuantity - 1;
-                    storedCart[index].quantidade = currentQuantity - 1;
-                    atualizarLocalStorage(storedCart);
-                    calculateTotal(storedCart);
+                const qtdAtual = parseInt(inputQuantidade.value);
+                if (qtdAtual > 1) {
+                    inputQuantidade.value = qtdAtual - 1;
+                    storedSacola[index].quantidade = qtdAtual - 1;
+                    atualizarLocalStorage(storedSacola);
+                    calcularTotal(storedSacola);
+                    calcularTudo(storedSacola);
                 }
             });
 
@@ -55,9 +56,10 @@ document.addEventListener("DOMContentLoaded", function(){
                 const currentQuantity = parseInt(inputQuantidade.value);
                 if (currentQuantity < produto.estoque) {
                     inputQuantidade.value = currentQuantity + 1;
-                    storedCart[index].quantidade = currentQuantity + 1;
-                    atualizarLocalStorage(storedCart);
-                    calculateTotal(storedCart);
+                    storedSacola[index].quantidade = currentQuantity + 1;
+                    atualizarLocalStorage(storedSacola);
+                    calcularTotal(storedSacola);
+                    calcularTudo(storedSacola);
                 }
             });
 
@@ -67,12 +69,13 @@ document.addEventListener("DOMContentLoaded", function(){
                     removeFromCart(index);
                 } else if (newQuantity > produto.estoque) {
                     this.value = produto.estoque;
-                    storedCart[index].quantidade = produto.estoque;
+                    storedSacola[index].quantidade = produto.estoque;
                 } else {
-                    storedCart[index].quantidade = newQuantity;
+                    storedSacola[index].quantidade = newQuantity;
                 }
-                atualizarLocalStorage(storedCart);
-                calculateTotal(storedCart);
+                atualizarLocalStorage(storedSacola);
+                calcularTotal(storedSacola);
+                calcularTudo(storedSacola);
             });
 
             btnDelete.addEventListener('click', function(){
@@ -80,7 +83,8 @@ document.addEventListener("DOMContentLoaded", function(){
             });
         });
 
-        calculateTotal(storedCart);
+        calcularTotal(storedSacola);
+        calcularTudo(storedSacola);
     }
     function removeFromCart(index){
         let cart = JSON.parse(localStorage.getItem('cart'));
@@ -88,9 +92,15 @@ document.addEventListener("DOMContentLoaded", function(){
         atualizarLocalStorage(cart);
         carregarCarrinho();
     }
-    function calculateTotal(cart){
+    function calcularTotal(cart){
         const total = cart.reduce((acc, curr)=>acc+(curr.preco *curr.quantidade), 0);
         document.querySelector('#tt-revisao span').textContent = 'R$ ' + total.toFixed(2);
+
+    }
+    function calcularTudo(cart){
+        const total = cart.reduce((acc, curr)=>acc+(curr.preco *curr.quantidade), 0);
+        document.querySelector('#total-pedido span').textContent = 'R$ ' + total.toFixed(2);
+
     }
     function atualizarLocalStorage(cart){
         localStorage.setItem('cart', JSON.stringify(cart));
