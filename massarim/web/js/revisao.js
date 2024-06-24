@@ -1,3 +1,4 @@
+//js de revisao
 document.addEventListener("DOMContentLoaded", function(){
     const sacolaContainer = document.getElementById("container-revisao");
 
