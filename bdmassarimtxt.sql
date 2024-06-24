@@ -1,4 +1,4 @@
-
+drop database massarim;
 CREATE DATABASE massarim;
 USE massarim;
 
