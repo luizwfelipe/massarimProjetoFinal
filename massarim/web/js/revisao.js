@@ -67,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function(){
             inputQuantidade.addEventListener('change', function(){
                 const novaQuantidade = parseInt(this.value);
                 if (novaQuantidade <= 0){
-                    removeFromCart(index);
+                    removerDaSacola(index);
                 } else if (novaQuantidade > produto.estoque) {
                     this.value = produto.estoque;
                     storedSacola[index].quantidade = produto.estoque;
@@ -80,14 +80,14 @@ document.addEventListener("DOMContentLoaded", function(){
             });
 
             btnDelete.addEventListener('click', function(){
-                removeFromCart(index);
+                removerDaSacola(index);
             });
         });
 
         calcularTotal(storedSacola);
         calcularTudo(storedSacola);
     }
-    function removeFromCart(index){
+    function removerDaSacola(index){
         let cart = JSON.parse(localStorage.getItem('cart'));
         cart.splice(index, 1);
         atualizarLocalStorage(cart);
