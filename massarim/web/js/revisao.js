@@ -65,14 +65,14 @@ document.addEventListener("DOMContentLoaded", function(){
             });
 
             inputQuantidade.addEventListener('change', function(){
-                const newQuantity = parseInt(this.value);
-                if (newQuantity <= 0){
+                const novaQuantidade = parseInt(this.value);
+                if (novaQuantidade <= 0){
                     removeFromCart(index);
-                } else if (newQuantity > produto.estoque) {
+                } else if (novaQuantidade > produto.estoque) {
                     this.value = produto.estoque;
                     storedSacola[index].quantidade = produto.estoque;
                 } else {
-                    storedSacola[index].quantidade = newQuantity;
+                    storedSacola[index].quantidade = novaQuantidade;
                 }
                 atualizarLocalStorage(storedSacola);
                 calcularTotal(storedSacola);
@@ -94,12 +94,12 @@ document.addEventListener("DOMContentLoaded", function(){
         carregarCarrinho();
     }
     function calcularTotal(cart){
-        const total = cart.reduce((acc, curr)=>acc+(curr.preco *curr.quantidade), 0);
+        const total = cart.reduce((conta, atual)=>conta+(atual.preco *atual.quantidade), 0);
         document.querySelector('#tt-revisao span').textContent = 'R$ ' + total.toFixed(2);
 
     }
     function calcularTudo(cart){
-        const total = cart.reduce((acc, curr)=>acc+(curr.preco *curr.quantidade), 0);
+        const total = cart.reduce((conta, atual)=>conta+(atual.preco *atual.quantidade), 0);
         document.querySelector('#total-pedido span').textContent = 'R$ ' + total.toFixed(2);
 
     }

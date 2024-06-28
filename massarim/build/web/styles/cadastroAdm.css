@@ -12,6 +12,10 @@
     letter-spacing: -0.05vw;
 }
 
+main{
+    margin-top: 20%;
+}
+
 .form{
     display: flex;
     flex-direction: column;

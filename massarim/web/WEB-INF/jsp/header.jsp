@@ -45,6 +45,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="styles/header.css">
         <script src="https://kit.fontawesome.com/72aebe393c.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
         <title>header</title>
     </head>
     <body>
@@ -122,5 +123,6 @@
             </div>
         </div>
         <script src="js/carrinho.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     </body>
 </html>

@@ -94,10 +94,10 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
 
                 btnIncrementar.addEventListener('click', function(){
-                    const currentQuantity = parseInt(inputQuantidade.value);
-                    if (currentQuantity < produto.estoque) {
-                        inputQuantidade.value = currentQuantity + 1;
-                        cart[index].quantidade = currentQuantity + 1;
+                    const quantidadeAtual = parseInt(inputQuantidade.value);
+                    if (quantidadeAtual < produto.estoque) {
+                        inputQuantidade.value = quantidadeAtual + 1;
+                        cart[index].quantidade = quantidadeAtual + 1;
                         atualizarLocalStorage();
                         calculateTotal();
                     }
@@ -112,13 +112,13 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     function adicionarItemAoCarrinho(product) {
-        const existingProduct = cart.find(item => item.nome === product.nome);
+        const produtoExistente = cart.find(item => item.nome === product.nome);
 
-        if(existingProduct){
-            const availableQuantity = product.estoque - existingProduct.quantidade;
-            if(availableQuantity > 0) {
-                const quantityToAdd = Math.min(product.quantidade, availableQuantity);
-                existingProduct.quantidade += quantityToAdd;
+        if(produtoExistente){
+            const quantidadeDisponivel = product.estoque - produtoExistente.quantidade;
+            if(quantidadeDisponivel > 0) {
+                const quantityToAdd = Math.min(product.quantidade, quantidadeDisponivel);
+                produtoExistente.quantidade += quantityToAdd;
             }
         } else{
             cart.push(product);
@@ -146,6 +146,14 @@ document.addEventListener("DOMContentLoaded", function() {
     const btnAddSac = document.getElementById("addSac");
     if(btnAddSac !== null){
         btnAddSac.addEventListener("click", function(){
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Produto adiciona na sacola com sucesso!",
+                showConfirmButton: false,
+                timer: 1500
+              });
+              sacola.classList.add("ativo");
             const button =this;
             const product ={
                 image: document.querySelector('.imagens img').src,

@@ -15,6 +15,7 @@
         <script src="https://kit.fontawesome.com/72aebe393c.js" crossorigin="anonymous"></script>
     </head>
     <body>
+        <jsp:include page="header.jsp"></jsp:include>
         <main>
             <h1>REMOVER USUÁRIO</h1>
             <div class="containerUsuario">

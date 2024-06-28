@@ -17,7 +17,7 @@
         <link href="styles/cadastroUser.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
-
+        <jsp:include page="header.jsp"></jsp:include>
         <main>
             <div class="container">
                 <div class="image">

@@ -12,6 +12,10 @@
     letter-spacing: -0.05vw;
 }
 
+main{
+    margin-top: 20%;
+}
+
 input{
     text-transform: none;
 }
@@ -37,6 +41,7 @@ main{
 
 .container{
     width: 50%;
+    margin-top: 20%;
 }
 
 .containerCategoriaTamanho{

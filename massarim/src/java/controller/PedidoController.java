@@ -126,7 +126,7 @@ public class PedidoController extends HttpServlet {
             String statusPedido = request.getParameter("statusPedido");
             PedidoDAO pedidoDAO = new PedidoDAO();
             pedidoDAO.atualizarStatus(idPedido, statusPedido);
-            response.sendRedirect("./excluir-produto");
+            response.sendRedirect("./todos-pedidos");
         }else{
                 String nextPage = "/WEB-INF/jsp/checkout.jsp";
                 RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(nextPage);

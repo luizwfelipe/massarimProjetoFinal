@@ -16,6 +16,7 @@
         <title>pedidos * MSSRM</title>
     </head>
     <body>
+        <jsp:include page="header.jsp"></jsp:include>
         <main>
             <div id="container">
                 <div>

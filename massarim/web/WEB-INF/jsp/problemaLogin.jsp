@@ -1,9 +1,8 @@
 <%-- 
-    Document   : erroLogin
-    Created on : 02/05/2024, 15:58:27
-    Author     : aluno
+    Document   : problemaLogin
+    Created on : 03/04/2024, 21:44:53
+    Author     : Admin
 --%>
-
 <%@page pageEncoding="UTF-8"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" %>
 <!DOCTYPE html>
@@ -17,7 +16,11 @@
         <title>login * MSSRM</title>
     </head>
     <body>
-        <h1>Erro ao realizar login</h1>
-        <button><a href="./login">Voltar ao Login</a></button>
+        <jsp:include page="header.jsp"></jsp:include>
+        <main>
+            <h1>Erro ao realizar login</h1>
+            <button><a href="./login">Voltar ao Login</a></button>
+        </main>
+
     </body>
 </html>

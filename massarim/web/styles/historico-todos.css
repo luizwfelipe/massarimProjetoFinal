@@ -71,3 +71,18 @@ main{
     font-size: 150%;
     font-weight: 800;
 }
+
+#atualizarStatus{
+    border: none;
+    background-color: transparent;
+}
+
+@media screen and (max-width:1024px){
+    .pedido-unico h5 {
+        color: #dddddd;
+        font-size: 30%;
+        font-weight: 700;
+    }
+    
+
+}

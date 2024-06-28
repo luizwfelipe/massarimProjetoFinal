@@ -82,7 +82,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
     carregarCarrinho();
 
-    // Validação e máscaras dos inputs de pagamento
+    //validar inputs e mascarás abaixo
     function aplicarMascarasEValidacoes() {
         const numeroCredito = document.getElementById('numero-credito');
         const nomeCredito = document.getElementById('nome-credito');
