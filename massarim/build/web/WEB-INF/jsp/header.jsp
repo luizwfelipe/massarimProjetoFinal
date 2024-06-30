@@ -122,7 +122,8 @@
                 </div>
             </div>
         </div>
-        <script src="js/carrinho.js"></script>
+        <script src="js/header.js"></script>
+        <script src="js/instrucao.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     </body>
 </html>

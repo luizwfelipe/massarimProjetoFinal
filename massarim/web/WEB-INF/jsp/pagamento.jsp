@@ -13,7 +13,10 @@
         <title>pagamento * MSSRM</title>
     </head>
     <body>
-        <header></header>
+        <header>
+            <a href="./home"><img src="assets/logo-massarim.png" alt="menu"></a>
+            <h2>ESCOLHA SUA FORMA DE PAGAMENTO!</h2>
+        </header>
         <main>
             <div id="container">
                 <div id="tipo-pagamento">
@@ -64,7 +67,7 @@
 
                         <h3>Cartão de crédito</h3>
                     </div>
-
+                    <form action="confirmarPedido" method="post">
                      <div id="area-pagamento-credito">
                         <div class="input-credito">
                             <label for="numero-credito">Número do Cartão</label>
@@ -83,12 +86,13 @@
                             <input type="text" name="cvc-credito" id="cvc-credito" placeholder="CVC do cartão *" required>
                         </div>
                      </div>
-                    <form action="confirmarPedido" method="post">
+                     <div class="div-confirmar">
                         <input type="hidden" name="endereco-rua" value="${enderecoSelecionado.rua}">
                         <input type="hidden" name="endereco-numero" value="${enderecoSelecionado.numero}">
                         <input type="hidden" name="tipo-pagamento" value="credito">
                         <input type="hidden" name="statusPedido" value="em trânsito">
                         <button type="submit" class="btn-confirmar-compra" id="comprar-credito">confirmar compra</button>
+                    </div>
                     </form>
                 </div>
                 <div id="debito">

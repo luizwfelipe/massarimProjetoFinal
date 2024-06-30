@@ -17,12 +17,27 @@ input{
 }
 
 header{
-    height: 10vh;
-    margin-bottom: 5vh;
     background-color: #f2f2f2;
+    height: 20vh;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0.3vw 10px #cfcfcf;
+}
+header img{
+    width: 20vw;
+}
+header h2{
+    font-size: 2vw;
+    color: #202020;
+    font-family: 'Prompt', 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
+    font-weight: 800;
 }
 
 main{
+    margin-top: 4%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -452,7 +467,6 @@ main{
 }
 
 
-none
 
 #titulo-debito{
     display: flex;
@@ -717,7 +731,11 @@ font-size: 100%;
         margin-top: 3%;
         font-size: 150%;
     }
-    
+    #pix.ativo {
+        margin-top: -5%;
+        display: flex;
+        padding: 10vh;
+    }
 }
 
 

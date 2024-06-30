@@ -24,6 +24,15 @@
         <section>
             <img src="assets/massarim-fundo-home (1).png" alt="">
         </section>
+        <section id="pop-up">
+            <div id="img-pop">
+                <img src="assets/freteGratis.png" alt="frete gratis nos meses de junho e julho">
+            </div>
+            <div id="fechar-pop">
+                <h3 id="h3-fechar">X</h3>
+            </div>
+        </section>
+
             <div class="containerProduto">
                 <c:forEach var="produtos" items="${produto}">
                 
@@ -45,5 +54,6 @@
 
     </main>
     <jsp:include page="footer.jsp"></jsp:include>
+    <script src="js/pop-up.js"></script>
     </body>
 </html>

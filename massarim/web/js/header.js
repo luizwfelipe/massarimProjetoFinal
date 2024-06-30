@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const btnAbrir = document.getElementById("bagOpen");
     const btnFechar = document.getElementById("fecharBag");
 
+
+
 /* ABRIR MOBILE*/
         const downBaixo = document.getElementById("down-baixo");
         const abrirMenuMobile = document.getElementById("abrir-menu");
@@ -28,6 +30,10 @@ document.addEventListener("DOMContentLoaded", function() {
         sacola.classList.remove("ativo");
     });
 
+
+    /*AJUDA A ACHAR HISTÓRICO */
+    
+    /*FIM*/
     function carregarCarrinho(){
         const storedCart = JSON.parse(localStorage.getItem('cart'));
         if (storedCart) {
@@ -130,6 +136,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function removeFromCart(index){
         cart.splice(index, 1);
+        Swal.fire({
+            position: "bottom-start",
+            icon: "success",
+            title: "Produto removido do carrinho com sucesso.",
+            showConfirmButton: false,
+            timer: 1500
+          });
         atualizarLocalStorage();
         carregarCarrinho();
     }

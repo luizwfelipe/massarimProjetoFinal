@@ -715,3 +715,22 @@ header:hover{
 #sacola{
     color: #202020;
 }
+
+#historico.aviso i{
+    color: #ff0000;
+    animation: blink 0.5s infinite;
+}
+
+@keyframes blink {
+    0% {
+        font-size: 110%;
+        color: #ff0000;
+    }
+    50% {
+        color: #f2f2f2;
+    }
+    100% {
+        font-size: 110%;
+        color: #ff0000;
+    }
+}

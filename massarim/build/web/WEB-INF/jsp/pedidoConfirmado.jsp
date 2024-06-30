@@ -7,6 +7,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" %>
 <!DOCTYPE html>
 <html>
+    <jsp:include page="header.jsp"></jsp:include>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>agradecemos sua compra! * MSSRM</title>
@@ -18,9 +19,11 @@
                 <img src="assets/concluido.svg" alt="compra confirmada">
                 <h1>COMPRA CONCLUÍDA</h1>
                 <h3>agradecemos a confiança em nossos serviços</h3>
-                <a href="./home"><button>CONTINUAR COMPRANDO</button></a>
+                <a id="continuar-comprando" href="./home"><button>CONTINUAR COMPRANDO</button></a>
             </div>
         </main>
-
+        <script src="js/instrucao.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     </body>
+
 </html>

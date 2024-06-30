@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Buenard:wght@400;700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend+Deca:wght@100..900&family=Libre+Bodoni:ital,wght@0,400..700;1,400..700&family=Sofia+Sans+Extra+Condensed:ital,wght@0,1..1000;1,1..1000&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Prompt', 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: -0.05vw;
+}
+
+input{
+    text-transform: none;
+}
+
+main{
+    margin-top: 10%;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#container{
+    margin-inline: 1vw;
+    border-radius: 20px;
+    width: 70%;
+    height: 70vh;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 2px 2px #cfcfcf;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#container img{
+    width: 30%;
+}
+
+#container button{
+    color: #f2f2f2;
+    background-color: #BF9B6F;
+    border: none;
+    font-weight: 800;
+    font-size: 120%;
+    padding: 5%;
+    width: 100%;
+    cursor: pointer;
+}
+
+@media screen and (max-width:768px){
+    #container{
+        margin-top: 20%;
+        height: 50vh;
+    }
+
+    #container img{
+        display: none;
+    }
+}

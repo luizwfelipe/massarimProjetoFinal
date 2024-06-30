@@ -15,7 +15,10 @@
     <title>endereço * MSSRM</title>
 </head>
 <body>
-    <header></header>
+    <header>
+        <a href="./home"><img src="assets/logo-massarim.png" alt="menu"></a>
+        <h2>ESCOLHA UM ENDEREÇO!</h2>
+    </header>
     <main>
         <div class="container">
             <div id="cima">

@@ -12,14 +12,19 @@
         <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
         <link rel="manifest" href="assets/site.webmanifest">
+        <link rel="stylesheet" href="styles/erroLogin.css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>login * MSSRM</title>
     </head>
     <body>
         <jsp:include page="header.jsp"></jsp:include>
         <main>
-            <h1>Erro ao realizar login</h1>
-            <button><a href="./login">Voltar ao Login</a></button>
+            <div id="container">
+                <img src="assets/naoAutorizado.svg" alt="">
+                <h1>Opa... Erro ao efetuar login</h1>
+                <h3>Confira seus dados novamente!</h3>
+                <a href="./login"><button>Voltar ao Login</button></a>
+            </div>
         </main>
 
     </body>
