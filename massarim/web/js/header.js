@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 const divParteCima = document.createElement("div");
                 divParteCima.classList.add("parteCima");
-                divParteCima.innerHTML = `<h3>${produto.nome}</h3><h3>${produto.tamanho}</h3>`;
+                divParteCima.innerHTML = `<h3>${produto.nome}</h3>`;
 
                 const divParteBaixo = document.createElement("div");
                 divParteBaixo.classList.add("parteBaixo");
@@ -76,8 +76,14 @@ document.addEventListener("DOMContentLoaded", function() {
                      <button class="btn-incrementar" data-index="${index}">+</button>
                      <button class="botaoTira" data-index="${index}">X</button>`;
 
+                     const divTamanho = document.createElement("div");
+                     divTamanho.classList.add("divTamanho");
+                     divTamanho.innerHTML = 
+                         `<h3>tam: ${produto.tamanho}</h3>`;
+
                 divInfo.appendChild(divParteCima);
                 divInfo.appendChild(divParteBaixo);
+                divInfo.appendChild(divTamanho);
 
                 divP.appendChild(divImg);
                 divP.appendChild(divInfo);
@@ -110,7 +116,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 });
 
                 btnDelete.addEventListener('click', function(){
-                    removeFromCart(index);
+                    removerDoCarrinho(index);
                 });
             });
         }
@@ -134,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function() {
         carregarCarrinho();
     }
 
-    function removeFromCart(index){
+    function removerDoCarrinho(index){
         cart.splice(index, 1);
         Swal.fire({
             position: "bottom-start",

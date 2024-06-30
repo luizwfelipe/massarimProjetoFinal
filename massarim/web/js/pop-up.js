@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     setInterval(function() {
         popUp.classList.add("aberto");
-    },20000);  //20000
+    },40000);  //20000= para deixar 20 segundos
     btnFecharPop.addEventListener("click", function() {
         popUp.classList.remove("aberto");
     });

@@ -1,6 +1,12 @@
 const inputCpf = document.querySelector('#cpf');
 const inputTelefone = document.querySelector('#telefone');
 const inputDataNascimento = document.querySelector('#dataNascimento');
+
+const btnFecharPop = document.getElementById("h3-fechar");
+const popUp = document.getElementById("pop-up-idade");
+
+
+
 function cpf(valor){
     valor = valor.replace(/\D/g, ''); 
     if (valor.length > 3) {
@@ -44,17 +50,20 @@ inputTelefone.addEventListener('input',()=>{
 });
 
 const dataMinima = new Date();
-dataMinima.setFullYear(dataMinima.getFullYear() - 18);
-const datamin = dataMinima.toISOString().slice(0, 10);
+dataMinima.setFullYear(dataMinima.getFullYear() -18);
+const datamin = dataMinima.toISOString().slice(0,10);
 
 inputDataNascimento.setAttribute('max', datamin);
 
 inputDataNascimento.addEventListener('input', () =>{
     const dataNascimento = new Date(inputDataNascimento.value);
     const dataLimite = new Date();
-    dataLimite.setFullYear(dataLimite.getFullYear() - 18);
+    dataLimite.setFullYear(dataLimite.getFullYear()-18);
     if(dataNascimento > dataLimite){
-        alert('Você precisa ter 18 anos para se cadastrar em nosso site.');
+        popUp.classList.add("aberto");
+        btnFecharPop.addEventListener("click", function() {
+            popUp.classList.remove("aberto");
+        });
         inputDataNascimento.value = '';
     }
 });

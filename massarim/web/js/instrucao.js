@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
         btnHistorico.classList.add("aviso");
         Swal.fire({
-            title: "Compra Confirmada!",
+            title: "OBRIGADO!",
             text: "Agora o senhor(a) pode ver o status do seu pedido no icone de tempo acima!",
             icon: "info"
         }).then(()=>{

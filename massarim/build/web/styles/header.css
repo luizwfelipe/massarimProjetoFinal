@@ -78,6 +78,9 @@ input{
 
 #sacola #container-bag #container-prod .container-img img{
     max-width: 80%;
+    border-radius: 100%;
+    border: 1px solid #202020;
+    margin-inline: 2%;
 }
 
 #sacola #container-bag #container-prod .container-info{
@@ -410,9 +413,21 @@ header:hover{
     justify-content: space-around;
     align-items: center;
 }
-
+#sacola #container-bag #container-prod .container-info h3 {
+    font-size: 1vw;
+    color: #202020;
+    width: 100%;
+    font-weight: 700;
+    font-size: 80%;
+}
 @media screen and (max-width:1130px){
-
+    #sacola #container-bag #container-prod .container-info h3 {
+        font-size: 1vw;
+        color: #202020;
+        width: 100%;
+        font-weight: 700;
+        font-size: 100%;
+    }
     #sacola{
         display: none;
         grid-template-columns: 0fr 1fr;
@@ -677,7 +692,13 @@ header:hover{
         font-weight: 800;
         text-decoration: none;
     }
-
+    #sacola #container-bag #container-prod .container-info h3 {
+        font-size: 100%;
+        color: #202020;
+        width: 100%;
+        font-weight: 700;
+        font-size: 100%;
+    }
 }
 
 #deslogar{
@@ -733,4 +754,27 @@ header:hover{
         font-size: 110%;
         color: #ff0000;
     }
+}
+
+.divTamanho{
+    width: 100%;
+    display: flex;
+    color: #202020;
+    text-align: start;
+}
+
+
+
+.info-prod #nome-produto {
+    color: #202020;
+    font-size: 2.5vw;
+    font-weight: 600;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#sacola #container-bag #container-prod .container-info h4 {
+    color: #202020;
+    font-weight: 700;
 }

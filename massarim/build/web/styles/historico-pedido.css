@@ -71,3 +71,12 @@ main{
     font-size: 150%;
     font-weight: 800;
 }
+
+
+@media screen and (max-width:1024px){
+.pedido-unico h5 {
+    color: #dddddd;
+    font-size: 50%;
+    font-weight: 700;
+}
+}

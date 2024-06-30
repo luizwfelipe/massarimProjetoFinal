@@ -26,11 +26,16 @@ header{
     flex-direction: column;
     box-shadow: 0px 0.3vw 10px #cfcfcf;
 }
-header img{
-    width: 20vw;
+header a{
+    justify-content: center;
+    align-items: center;
+}
+
+header a img{
+    width: 100%;
 }
 header h2{
-    font-size: 2vw;
+    font-size: 150%;
     color: #202020;
     font-family: 'Prompt', 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
     font-weight: 800;
@@ -80,7 +85,10 @@ main{
 }
 
 .container-img img{
-    max-width: 150%;
+    max-width: 100%;
+    border-radius: 100%;
+    border: 1px solid #202020;
+    margin-inline: 2%;
 }
 .parteCima{
     text-align: center;
@@ -245,8 +253,8 @@ main{
     margin-inline: 0.2vw;
 }
 
-.parteBaixo .quantidade{
-    width: 5%;
+.parteBaixo .quantidade {
+    width: 10%;
     border: none;
     background-color: transparent;
     border-bottom: 1px solid #313131;
@@ -275,7 +283,16 @@ main{
     margin-left: 20%;
 }
 
-@media screen and (max-width:768px){
+@media screen and (max-width:900px){
+    header a img{
+        width: 80%;
+    }
+    header h2{
+        font-size: 150%;
+        color: #202020;
+        font-family: 'Prompt', 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
+        font-weight: 800;
+    }
     #revisao-sacola{
         display: flex;
         flex-direction: column;

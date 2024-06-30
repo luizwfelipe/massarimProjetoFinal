@@ -99,3 +99,97 @@ section img{
 .cartao:hover .cartao-info{
     opacity: 1;
 }
+
+@media screen and (max-width:1024px){
+    main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .containerProduto{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+    }
+    .cartao{
+        width: 100%;
+        height: 90%;
+        margin-bottom: 2vh;
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+        text-decoration: none;
+        position: relative;
+ 
+    }
+
+    .cartao a{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .cartao .imagemProduto{
+        width: 50%; 
+        height: auto;
+        max-width: 30vw;
+        max-height: 55vh; 
+        overflow: unset; 
+        transition: filter 0.3s ease;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 2px 2px #cfcfcf;
+    }
+    
+    .imagemProduto img{
+        width: 100%;
+        transition: filter 0.3s ease;
+        filter: grayscale(0.3);
+        margin-inline: auto;
+    }
+    .cartao-info{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 3vw;
+    }
+    .cartao-info h5{
+        font-size: 100%;
+        color: #616161;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    .cartao-info .preco-produto{
+        font-size: 100%;
+        color: #616161;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    .cartao-info .tamanho-produto{
+        font-size: 100%;
+        color: #616161;
+        font-weight: 700;
+        text-decoration: none;
+    }
+    section{
+        margin-top: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    section img{
+        border-radius: 10px;
+        margin-top: 10%;
+        margin-bottom: 10%;
+        width: 80%;
+        height: 100%;
+    }
+}

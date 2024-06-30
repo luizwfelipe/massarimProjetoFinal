@@ -26,11 +26,17 @@ header{
     flex-direction: column;
     box-shadow: 0px 0.3vw 10px #cfcfcf;
 }
-header img{
-    width: 20vw;
+
+header a{
+    justify-content: center;
+    align-items: center;
+}
+
+header a img{
+    width: 100%;
 }
 header h2{
-    font-size: 2vw;
+    font-size: 150%;
     color: #202020;
     font-family: 'Prompt', 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
     font-weight: 800;
@@ -43,6 +49,8 @@ main{
     align-items: center;
     font-family: 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
 }
+
+
 
 #container{
     margin-inline: 1vw;
@@ -354,14 +362,14 @@ main{
     font-size: 0.8vw;
 }
 
-#sacola-produtos{
+#sacola-produtos {
     height: 90%;
-    overflow-y: scroll;
+    overflow-y: auto;
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items: self-end;
+    justify-content: start;
 }
 
 .produto{
@@ -378,11 +386,15 @@ main{
 
 .produto .container-img{
     width: 40%;
+    margin-left: 0;
 }
 
 
 .produto .container-img img{
     width: 80%;
+    border-radius: 100%;
+    border: 1px solid #202020;
+    margin-inline: 2%;
 }
 
 .produto .parteBaixo{
@@ -501,15 +513,17 @@ main{
         box-shadow: 0px 2px 2px #cfcfcf;
     }
     #intrucoes-pix {
-        background-color: #D9D9D9;
-        padding: 5%;
-        border-end-end-radius: 10px;
-        border-end-start-radius: 10px;
-        font-size: 50%;
-        margin-top: 20%;
-        margin-bottom: 20%;
+        display: none;
     }
-
+    header a img{
+        width: 80%;
+    }
+    header h2{
+        font-size: 150%;
+        color: #202020;
+        font-family: 'Prompt', 'Sofia Sans Extra Condensed','Josefin Sans', 'Lexend Deca', sans-serif, Arial, Helvetica;
+        font-weight: 800;
+    }
 
     #parteCima-pix {
         display: flex;
@@ -621,7 +635,13 @@ font-size: 100%;
     #pix.ativo {
         margin-top: 20%;
         display: flex;
+        width: 100%;
     }
+
+    #pagar-qr{
+        display: none;
+    }
+
     .tipo{
         height: 100%;
         width: 100%;
@@ -635,6 +655,7 @@ font-size: 100%;
         cursor: pointer;
         font-size: 50%;
         margin-right: 25%;
+        z-index: 50;
     }
     .container-pag-end{
         margin-top: 5%;
@@ -757,6 +778,11 @@ font-size: 100%;
         cursor: pointer;
         font-size: 30%;
     }
+
+    #pagar-qr{
+        display: flex;
+        flex-direction: column;
+    }
     #container #tipo-pagamento {
         width: 50%;
         height: 5%;
@@ -795,3 +821,4 @@ font-size: 100%;
         font-size: 70%;
     }
 }
+
